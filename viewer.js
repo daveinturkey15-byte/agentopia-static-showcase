@@ -7,6 +7,7 @@ let currentSnapshotIndex = 0;
 let currentFixture = null;
 let currentLocalFileName = null;
 let currentLocalLiveSessionId = null;
+let replayAutoplayTimer = null;
 const fixtureDetails = document.getElementById("fixture-details");
 const replayReviewChecklist = document.getElementById("replay-review-checklist");
 const fixturePromotionStatus = document.getElementById("fixture-promotion-status");
@@ -47,6 +48,9 @@ const localLiveRoomStatus = document.getElementById("local-live-room-status");
 const localLiveRoomParticipants = document.getElementById("local-live-room-participants");
 const localLiveRoomEvents = document.getElementById("local-live-room-events");
 const localLiveRoomExamples = document.getElementById("local-live-room-examples");
+const groupPlayStats = document.getElementById("group-play-stats");
+const replayAutoplayToggle = document.getElementById("replay-autoplay-toggle");
+const replayAutoplayStatus = document.getElementById("replay-autoplay-status");
 const localSessionTranscriptEntries = [];
 const fixturePicker = document.getElementById("fixture-picker");
 const catalogFilter = document.getElementById("catalog-filter");
@@ -57,7 +61,29 @@ const evidenceFilterStatus = document.getElementById("evidence-filter-status");
 const tileSymbols = new Map([
   ["flower", "✿"],
   ["lamp", "◉"],
+  ["path", "▱"],
+  ["snack", "◍"],
+  ["portal", "◇"],
+  ["pixel-block", "▣"],
 ]);
+
+const agentVisuals = [
+  { symbol: "🦞", label: "coral", paletteClass: "agent-palette-0" },
+  { symbol: "🫧", label: "bubble", paletteClass: "agent-palette-1" },
+  { symbol: "🦀", label: "crab", paletteClass: "agent-palette-2" },
+  { symbol: "🌿", label: "moss", paletteClass: "agent-palette-3" },
+  { symbol: "✨", label: "spark", paletteClass: "agent-palette-4" },
+  { symbol: "⭐", label: "star", paletteClass: "agent-palette-5" },
+  { symbol: "🌙", label: "moon", paletteClass: "agent-palette-6" },
+  { symbol: "🔥", label: "ember", paletteClass: "agent-palette-7" },
+];
+
+function agentVisualFor(agentId, agents = []) {
+  const agentIds = agents.map((agent) => (typeof agent === "string" ? agent : agent.agent_id));
+  const knownIndex = agentIds.indexOf(agentId);
+  const fallbackIndex = Array.from(agentId).reduce((total, character) => total + character.charCodeAt(0), 0);
+  return agentVisuals[(knownIndex >= 0 ? knownIndex : fallbackIndex) % agentVisuals.length];
+}
 
 function positionKey(position) {
   return `${position.x},${position.y}`;
@@ -528,9 +554,11 @@ function renderGrid(snapshot) {
 
       const agent = agents.get(key);
       if (agent) {
+        const visual = agentVisualFor(agent.agent_id, observation.agents);
         cell.classList.add("cell--agent");
-        labels.push(`agent ${agent.agent_id} score ${agent.score}`);
-        markers.push("🦞");
+        cell.classList.add(visual.paletteClass);
+        labels.push(`agent ${agent.agent_id} score ${agent.score} ${visual.label} badge`);
+        markers.push(visual.symbol);
       }
 
       if (markers.length === 0) {
@@ -565,6 +593,87 @@ function renderParticipants(snapshot) {
     return item;
   });
   participants.replaceChildren(...items);
+}
+
+function renderPartyRoster(snapshot) {
+  const partyRoster = document.querySelector("#party-roster");
+  const agents = snapshot.observation.agents;
+
+  if (agents.length === 0) {
+    partyRoster.replaceChildren(makeListItem("No agents in this party yet."));
+    return;
+  }
+
+  const items = agents.map((agent) => {
+    const visual = agentVisualFor(agent.agent_id, agents);
+    const item = document.createElement("li");
+    item.classList.add(visual.paletteClass);
+
+    const badge = document.createElement("span");
+    badge.classList.add("party-roster-badge", visual.paletteClass);
+    badge.textContent = visual.symbol;
+
+    const label = document.createElement("span");
+    label.textContent = `${agent.agent_id} — ${visual.label} badge, score ${agent.score}, ${formatPosition(agent.position)}`;
+
+    item.replaceChildren(badge, label);
+    return item;
+  });
+  partyRoster.replaceChildren(...items);
+}
+
+function groupSizeLabelFor(count) {
+  if (count <= 1) {
+    return `solo (${count})`;
+  }
+  if (count <= 3) {
+    return `small group (${count})`;
+  }
+  if (count <= 8) {
+    return `medium group (${count})`;
+  }
+  return `large swarm (${count})`;
+}
+
+function summarizeActionMix(payload) {
+  const counts = new Map();
+  for (const turn of payload.replay.turns) {
+    for (const action of Object.values(turn.actions)) {
+      counts.set(action.type, (counts.get(action.type) ?? 0) + 1);
+    }
+  }
+
+  if (counts.size === 0) {
+    return "none yet";
+  }
+
+  return Array.from(counts.entries())
+    .sort(([left], [right]) => left.localeCompare(right))
+    .map(([actionType, count]) => `${actionType}×${count}`)
+    .join(", ");
+}
+
+function renderGroupPlayStats(payload, snapshotIndex) {
+  const snapshot = payload.snapshots[snapshotIndex];
+  const observation = snapshot.observation;
+  const groupSizeLabel = groupSizeLabelFor(observation.agents.length);
+  const totalScore = observation.agents.reduce((sum, agent) => sum + agent.score, 0);
+  const scoreboardLeader = observation.agents
+    .slice()
+    .sort((left, right) => right.score - left.score || left.agent_id.localeCompare(right.agent_id))[0];
+  const scoreboardLine = scoreboardLeader
+    ? `Scoreboard leader: ${scoreboardLeader.agent_id} with ${scoreboardLeader.score}`
+    : "Scoreboard leader: none yet";
+  const lines = [
+    `Group size: ${groupSizeLabel}`,
+    `Total score: ${totalScore}`,
+    scoreboardLine,
+    `Action mix: ${summarizeActionMix(payload)}`,
+    `Room objects: ${observation.resources.length} resources, ${observation.decorations.length} decorations, ${observation.notes.length} notes, ${observation.quests.length} quest cards`,
+    "Local-only: these stats summarize the loaded replay and do not prove live multiplayer, persistence, upload, or public hosting.",
+  ];
+
+  groupPlayStats.replaceChildren(...lines.map((line) => makeListItem(line)));
 }
 
 function describeAction(agentId, action) {
@@ -1290,6 +1399,10 @@ function describeEvent(event) {
   if (event.type === "blocked_agent") {
     return `${event.agent_id} was blocked moving ${event.direction} by ${event.blocked_by}`;
   }
+  if (event.type === "blocked_contested") {
+    const contenders = event.contenders.join(", ");
+    return `${event.agent_id} was blocked moving ${event.direction} into contested ${formatPosition(event.contested_destination)} with ${contenders}`;
+  }
   if (event.type === "gather_empty") {
     return `${event.agent_id} tried to gather, but found nothing`;
   }
@@ -1417,7 +1530,9 @@ function renderTurn(payload, snapshotIndex) {
   renderGrid(snapshot);
   renderCellInspector(snapshot);
   renderParticipants(snapshot);
+  renderPartyRoster(snapshot);
   renderStateSummary(snapshot);
+  renderGroupPlayStats(payload, snapshotIndex);
   renderTurnActions(turn);
   renderActionPreview(snapshot);
   renderActionSandbox();
@@ -1434,6 +1549,51 @@ function renderTurn(payload, snapshotIndex) {
   }
 }
 
+function stopReplayAutoplay(message = "Autoplay is stopped.") {
+  if (replayAutoplayTimer !== null) {
+    clearInterval(replayAutoplayTimer);
+    replayAutoplayTimer = null;
+  }
+  if (replayAutoplayToggle) {
+    replayAutoplayToggle.textContent = "Play replay";
+    replayAutoplayToggle.setAttribute("aria-pressed", "false");
+  }
+  if (replayAutoplayStatus) {
+    replayAutoplayStatus.textContent = message;
+  }
+}
+
+function advanceReplayAutoplay() {
+  if (!currentPayload) {
+    stopReplayAutoplay("Load a replay before autoplay.");
+    return;
+  }
+  const nextSnapshotIndex = (currentSnapshotIndex + 1) % currentPayload.snapshots.length;
+  renderTurn(currentPayload, nextSnapshotIndex);
+  if (replayAutoplayStatus) {
+    replayAutoplayStatus.textContent = `Autoplay showing turn ${currentPayload.snapshots[nextSnapshotIndex].turn}.`;
+  }
+}
+
+function toggleReplayAutoplay() {
+  if (replayAutoplayTimer !== null) {
+    stopReplayAutoplay("Autoplay is stopped.");
+    return;
+  }
+  if (!currentPayload) {
+    stopReplayAutoplay("Load a replay before autoplay.");
+    return;
+  }
+  replayAutoplayTimer = setInterval(advanceReplayAutoplay, 1200);
+  if (replayAutoplayToggle) {
+    replayAutoplayToggle.textContent = "Stop replay";
+    replayAutoplayToggle.setAttribute("aria-pressed", "true");
+  }
+  if (replayAutoplayStatus) {
+    replayAutoplayStatus.textContent = `Autoplay showing turn ${currentPayload.snapshots[currentSnapshotIndex].turn}.`;
+  }
+}
+
 function renderTurnSelector(payload) {
   const turns = document.querySelector("#turns");
   const buttons = payload.snapshots.map((snapshot, index) => {
@@ -1443,13 +1603,17 @@ function renderTurnSelector(payload) {
     button.dataset.snapshotIndex = String(index);
     button.setAttribute("aria-pressed", "false");
     button.textContent = `Turn ${snapshot.turn}`;
-    button.addEventListener("click", () => renderTurn(payload, index));
+    button.addEventListener("click", () => {
+      stopReplayAutoplay("Autoplay stopped after manual turn selection.");
+      renderTurn(payload, index);
+    });
     return button;
   });
   turns.replaceChildren(...buttons);
 }
 
 function renderPayload(payload, summaryText, selectedFixtureIdValue = null) {
+  stopReplayAutoplay("Autoplay is stopped for the newly loaded replay.");
   selectedFixtureId = selectedFixtureIdValue;
   selectedCellKey = "0,0";
   currentPayload = payload;
@@ -1484,6 +1648,25 @@ async function loadReplay(fixture) {
   renderFixtureDetails({ fixture, payload });
   renderReplayReviewChecklist(payload, { currentFixture: fixture });
   renderFixturePromotionStatus();
+}
+
+function loadFixtureById(fixtureId) {
+  const fixture = loadedCatalog.find((candidate) => candidate.id === fixtureId);
+  if (!fixture) {
+    const summary = document.querySelector("#fixture-summary");
+    summary.textContent = `No curated mode found for fixture ${fixtureId}.`;
+    return;
+  }
+  loadReplay(fixture);
+}
+
+function setupGameModeCards() {
+  for (const button of document.querySelectorAll("[data-mode-fixture-id]")) {
+    button.addEventListener("click", () => {
+      const fixtureId = button.dataset.modeFixtureId;
+      loadFixtureById(fixtureId);
+    });
+  }
 }
 
 function setupLocalReplayLoader() {
@@ -1572,6 +1755,7 @@ async function main() {
   renderLocalSessionAttemptComparison();
   const catalog = await loadJson(catalogPath);
   loadedCatalog = catalog.fixtures;
+  setupGameModeCards();
   renderFilteredFixturePicker();
   catalogFilter.addEventListener("input", () => renderFilteredFixturePicker());
   evidenceFilter.addEventListener("input", () => renderFilteredEvidence());
@@ -1595,6 +1779,10 @@ async function main() {
   }
   if (localLiveRoomCleanupButton) {
     localLiveRoomCleanupButton.addEventListener("click", () => cleanupLocalLiveRoom());
+  }
+  if (replayAutoplayToggle) {
+    replayAutoplayToggle.addEventListener("click", () => toggleReplayAutoplay());
+    replayAutoplayToggle.setAttribute("aria-pressed", "false");
   }
   if (localLiveRoomJigglyActionInput) {
     localLiveRoomJigglyActionInput.addEventListener("input", () => validateLocalLiveActionInputStatus(localLiveRoomJigglyActionInput, "jiggly"));

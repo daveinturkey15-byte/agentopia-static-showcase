@@ -19,6 +19,38 @@ section {
   margin-block: 2rem;
 }
 
+.game-mode-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 0.75rem;
+}
+
+.game-mode-card {
+  display: grid;
+  gap: 0.45rem;
+  border: 1px solid #6b548d;
+  border-radius: 1rem;
+  padding: 1rem;
+  background: #241a35;
+  color: #f7ecff;
+  text-align: left;
+  cursor: pointer;
+}
+
+.game-mode-card:hover,
+.game-mode-card:focus-visible {
+  border-color: #ff88d8;
+  box-shadow: 0 0 0 2px rgba(255, 136, 216, 0.2);
+}
+
+.game-mode-card strong {
+  font-size: 1.05rem;
+}
+
+.game-mode-card span {
+  color: #d9c6ff;
+}
+
 .grid {
   display: grid;
   gap: 0.35rem;
@@ -44,6 +76,28 @@ section {
 .turn-button--selected {
   border-color: #ff88d8;
   background: #4f285f;
+}
+
+.replay-autoplay-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-block: 0 1rem;
+}
+
+.replay-autoplay-controls button {
+  border: 1px solid #ff88d8;
+  border-radius: 999px;
+  padding: 0.55rem 0.85rem;
+  background: #4f285f;
+  color: #f7ecff;
+  cursor: pointer;
+}
+
+.replay-autoplay-controls p {
+  margin: 0;
+  color: #d9c6ff;
 }
 
 .cell {
@@ -290,6 +344,80 @@ section {
 }
 
 .participants {
+  display: grid;
+  gap: 0.5rem;
+  padding-inline-start: 1.25rem;
+  color: #f7ecff;
+}
+
+.party-roster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  padding: 0;
+  list-style: none;
+}
+
+.party-roster li {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  border: 1px solid #6b548d;
+  border-radius: 999px;
+  padding: 0.4rem 0.65rem;
+  background: #241a35;
+}
+
+.party-roster-badge {
+  display: inline-grid;
+  place-items: center;
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 999px;
+  font-size: 1rem;
+}
+
+.agent-palette-0 {
+  border-color: #ff88d8;
+  background: #4f285f;
+}
+
+.agent-palette-1 {
+  border-color: #8be9fd;
+  background: #18394a;
+}
+
+.agent-palette-2 {
+  border-color: #ffb86c;
+  background: #4a2c17;
+}
+
+.agent-palette-3 {
+  border-color: #9ce37d;
+  background: #24442f;
+}
+
+.agent-palette-4 {
+  border-color: #c792ea;
+  background: #382150;
+}
+
+.agent-palette-5 {
+  border-color: #f1fa8c;
+  background: #3d3f18;
+}
+
+.agent-palette-6 {
+  border-color: #64d8cb;
+  background: #183d3a;
+}
+
+.agent-palette-7 {
+  border-color: #ff6b6b;
+  background: #4a1e2a;
+}
+
+.group-play-stats {
   display: grid;
   gap: 0.5rem;
   padding-inline-start: 1.25rem;

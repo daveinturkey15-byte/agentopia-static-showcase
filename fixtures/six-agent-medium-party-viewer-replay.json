@@ -1,0 +1,845 @@
+{
+  "format": "agent-playground.viewer-replay.v1",
+  "replay": {
+    "agent_ids": [
+      "jiggly",
+      "moltie",
+      "crabby",
+      "puff",
+      "tidy",
+      "bubbles"
+    ],
+    "height": 6,
+    "resource_count": 4,
+    "seed": 23,
+    "turns": [
+      {
+        "actions": {
+          "bubbles": {
+            "message": "bubble lights ready",
+            "type": "say"
+          },
+          "crabby": {
+            "message": "snack patrol online",
+            "type": "say"
+          },
+          "jiggly": {
+            "description": "Six agents coordinate decorations, notes, and snacks.",
+            "title": "Medium party picnic",
+            "type": "create_quest"
+          },
+          "moltie": {
+            "message": "I'll watch the lantern row",
+            "type": "say"
+          },
+          "puff": {
+            "message": "I'll keep the cozy beat",
+            "type": "say"
+          },
+          "tidy": {
+            "message": "tidying a safe path",
+            "type": "say"
+          }
+        },
+        "events": [
+          {
+            "agent_id": "bubbles",
+            "message": "bubble lights ready",
+            "type": "say"
+          },
+          {
+            "agent_id": "crabby",
+            "message": "snack patrol online",
+            "type": "say"
+          },
+          {
+            "agent_id": "jiggly",
+            "description": "Six agents coordinate decorations, notes, and snacks.",
+            "quest_id": "turn-0-jiggly-quest",
+            "status": "open",
+            "title": "Medium party picnic",
+            "type": "create_quest"
+          },
+          {
+            "agent_id": "moltie",
+            "message": "I'll watch the lantern row",
+            "type": "say"
+          },
+          {
+            "agent_id": "puff",
+            "message": "I'll keep the cozy beat",
+            "type": "say"
+          },
+          {
+            "agent_id": "tidy",
+            "message": "tidying a safe path",
+            "type": "say"
+          }
+        ],
+        "turn": 0
+      },
+      {
+        "actions": {
+          "bubbles": {
+            "tile": "lamp",
+            "type": "place_tile"
+          },
+          "crabby": {
+            "message": "guard the berry lane",
+            "type": "leave_note"
+          },
+          "jiggly": {
+            "tile": "flower",
+            "type": "place_tile"
+          },
+          "moltie": {
+            "tile": "lamp",
+            "type": "place_tile"
+          },
+          "puff": {
+            "message": "sing before moving",
+            "type": "leave_note"
+          },
+          "tidy": {
+            "tile": "flower",
+            "type": "place_tile"
+          }
+        },
+        "events": [
+          {
+            "agent_id": "bubbles",
+            "decoration_id": "turn-1-bubbles-lamp",
+            "position": {
+              "x": 5,
+              "y": 0
+            },
+            "tile": "lamp",
+            "type": "place_tile"
+          },
+          {
+            "agent_id": "crabby",
+            "message": "guard the berry lane",
+            "note_id": "turn-1-crabby-note",
+            "position": {
+              "x": 2,
+              "y": 0
+            },
+            "type": "leave_note"
+          },
+          {
+            "agent_id": "jiggly",
+            "decoration_id": "turn-1-jiggly-flower",
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "tile": "flower",
+            "type": "place_tile"
+          },
+          {
+            "agent_id": "moltie",
+            "decoration_id": "turn-1-moltie-lamp",
+            "position": {
+              "x": 1,
+              "y": 0
+            },
+            "tile": "lamp",
+            "type": "place_tile"
+          },
+          {
+            "agent_id": "puff",
+            "message": "sing before moving",
+            "note_id": "turn-1-puff-note",
+            "position": {
+              "x": 3,
+              "y": 0
+            },
+            "type": "leave_note"
+          },
+          {
+            "agent_id": "tidy",
+            "decoration_id": "turn-1-tidy-flower",
+            "position": {
+              "x": 4,
+              "y": 0
+            },
+            "tile": "flower",
+            "type": "place_tile"
+          }
+        ],
+        "turn": 1
+      },
+      {
+        "actions": {
+          "bubbles": {
+            "direction": "S",
+            "type": "move"
+          },
+          "crabby": {
+            "direction": "S",
+            "type": "move"
+          },
+          "jiggly": {
+            "direction": "S",
+            "type": "move"
+          },
+          "moltie": {
+            "direction": "S",
+            "type": "move"
+          },
+          "puff": {
+            "direction": "S",
+            "type": "move"
+          },
+          "tidy": {
+            "direction": "S",
+            "type": "move"
+          }
+        },
+        "events": [
+          {
+            "agent_id": "bubbles",
+            "from": {
+              "x": 5,
+              "y": 0
+            },
+            "to": {
+              "x": 5,
+              "y": 1
+            },
+            "type": "move"
+          },
+          {
+            "agent_id": "crabby",
+            "from": {
+              "x": 2,
+              "y": 0
+            },
+            "to": {
+              "x": 2,
+              "y": 1
+            },
+            "type": "move"
+          },
+          {
+            "agent_id": "jiggly",
+            "from": {
+              "x": 0,
+              "y": 0
+            },
+            "to": {
+              "x": 0,
+              "y": 1
+            },
+            "type": "move"
+          },
+          {
+            "agent_id": "moltie",
+            "from": {
+              "x": 1,
+              "y": 0
+            },
+            "to": {
+              "x": 1,
+              "y": 1
+            },
+            "type": "move"
+          },
+          {
+            "agent_id": "puff",
+            "from": {
+              "x": 3,
+              "y": 0
+            },
+            "to": {
+              "x": 3,
+              "y": 1
+            },
+            "type": "move"
+          },
+          {
+            "agent_id": "tidy",
+            "from": {
+              "x": 4,
+              "y": 0
+            },
+            "to": {
+              "x": 4,
+              "y": 1
+            },
+            "type": "move"
+          }
+        ],
+        "turn": 2
+      }
+    ],
+    "width": 6
+  },
+  "snapshots": [
+    {
+      "observation": {
+        "agents": [
+          {
+            "agent_id": "bubbles",
+            "position": {
+              "x": 5,
+              "y": 0
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "crabby",
+            "position": {
+              "x": 2,
+              "y": 0
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "jiggly",
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "moltie",
+            "position": {
+              "x": 1,
+              "y": 0
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "puff",
+            "position": {
+              "x": 3,
+              "y": 0
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "tidy",
+            "position": {
+              "x": 4,
+              "y": 0
+            },
+            "score": 0
+          }
+        ],
+        "decorations": [],
+        "height": 6,
+        "notes": [],
+        "quests": [],
+        "resources": [
+          {
+            "position": {
+              "x": 5,
+              "y": 3
+            },
+            "resource_id": "berry-1",
+            "value": 1
+          },
+          {
+            "position": {
+              "x": 4,
+              "y": 2
+            },
+            "resource_id": "berry-2",
+            "value": 1
+          },
+          {
+            "position": {
+              "x": 1,
+              "y": 5
+            },
+            "resource_id": "berry-3",
+            "value": 1
+          },
+          {
+            "position": {
+              "x": 5,
+              "y": 4
+            },
+            "resource_id": "berry-4",
+            "value": 1
+          }
+        ],
+        "room": {
+          "description": "A tiny cozy room where agents can play, build, and relax.",
+          "mood": "cozy",
+          "name": "Jiggly Grove"
+        },
+        "self": {
+          "agent_id": "jiggly",
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "score": 0
+        },
+        "turn": 0,
+        "walls": [],
+        "width": 6
+      },
+      "turn": 0
+    },
+    {
+      "observation": {
+        "agents": [
+          {
+            "agent_id": "bubbles",
+            "position": {
+              "x": 5,
+              "y": 0
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "crabby",
+            "position": {
+              "x": 2,
+              "y": 0
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "jiggly",
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "moltie",
+            "position": {
+              "x": 1,
+              "y": 0
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "puff",
+            "position": {
+              "x": 3,
+              "y": 0
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "tidy",
+            "position": {
+              "x": 4,
+              "y": 0
+            },
+            "score": 0
+          }
+        ],
+        "decorations": [],
+        "height": 6,
+        "notes": [],
+        "quests": [
+          {
+            "author_id": "jiggly",
+            "description": "Six agents coordinate decorations, notes, and snacks.",
+            "quest_id": "turn-0-jiggly-quest",
+            "status": "open",
+            "title": "Medium party picnic"
+          }
+        ],
+        "resources": [
+          {
+            "position": {
+              "x": 5,
+              "y": 3
+            },
+            "resource_id": "berry-1",
+            "value": 1
+          },
+          {
+            "position": {
+              "x": 4,
+              "y": 2
+            },
+            "resource_id": "berry-2",
+            "value": 1
+          },
+          {
+            "position": {
+              "x": 1,
+              "y": 5
+            },
+            "resource_id": "berry-3",
+            "value": 1
+          },
+          {
+            "position": {
+              "x": 5,
+              "y": 4
+            },
+            "resource_id": "berry-4",
+            "value": 1
+          }
+        ],
+        "room": {
+          "description": "A tiny cozy room where agents can play, build, and relax.",
+          "mood": "cozy",
+          "name": "Jiggly Grove"
+        },
+        "self": {
+          "agent_id": "jiggly",
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "score": 0
+        },
+        "turn": 1,
+        "walls": [],
+        "width": 6
+      },
+      "turn": 1
+    },
+    {
+      "observation": {
+        "agents": [
+          {
+            "agent_id": "bubbles",
+            "position": {
+              "x": 5,
+              "y": 0
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "crabby",
+            "position": {
+              "x": 2,
+              "y": 0
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "jiggly",
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "moltie",
+            "position": {
+              "x": 1,
+              "y": 0
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "puff",
+            "position": {
+              "x": 3,
+              "y": 0
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "tidy",
+            "position": {
+              "x": 4,
+              "y": 0
+            },
+            "score": 0
+          }
+        ],
+        "decorations": [
+          {
+            "decoration_id": "turn-1-bubbles-lamp",
+            "position": {
+              "x": 5,
+              "y": 0
+            },
+            "tile": "lamp"
+          },
+          {
+            "decoration_id": "turn-1-jiggly-flower",
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "tile": "flower"
+          },
+          {
+            "decoration_id": "turn-1-moltie-lamp",
+            "position": {
+              "x": 1,
+              "y": 0
+            },
+            "tile": "lamp"
+          },
+          {
+            "decoration_id": "turn-1-tidy-flower",
+            "position": {
+              "x": 4,
+              "y": 0
+            },
+            "tile": "flower"
+          }
+        ],
+        "height": 6,
+        "notes": [
+          {
+            "author_id": "crabby",
+            "message": "guard the berry lane",
+            "note_id": "turn-1-crabby-note",
+            "position": {
+              "x": 2,
+              "y": 0
+            }
+          },
+          {
+            "author_id": "puff",
+            "message": "sing before moving",
+            "note_id": "turn-1-puff-note",
+            "position": {
+              "x": 3,
+              "y": 0
+            }
+          }
+        ],
+        "quests": [
+          {
+            "author_id": "jiggly",
+            "description": "Six agents coordinate decorations, notes, and snacks.",
+            "quest_id": "turn-0-jiggly-quest",
+            "status": "open",
+            "title": "Medium party picnic"
+          }
+        ],
+        "resources": [
+          {
+            "position": {
+              "x": 5,
+              "y": 3
+            },
+            "resource_id": "berry-1",
+            "value": 1
+          },
+          {
+            "position": {
+              "x": 4,
+              "y": 2
+            },
+            "resource_id": "berry-2",
+            "value": 1
+          },
+          {
+            "position": {
+              "x": 1,
+              "y": 5
+            },
+            "resource_id": "berry-3",
+            "value": 1
+          },
+          {
+            "position": {
+              "x": 5,
+              "y": 4
+            },
+            "resource_id": "berry-4",
+            "value": 1
+          }
+        ],
+        "room": {
+          "description": "A tiny cozy room where agents can play, build, and relax.",
+          "mood": "cozy",
+          "name": "Jiggly Grove"
+        },
+        "self": {
+          "agent_id": "jiggly",
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "score": 0
+        },
+        "turn": 2,
+        "walls": [],
+        "width": 6
+      },
+      "turn": 2
+    },
+    {
+      "observation": {
+        "agents": [
+          {
+            "agent_id": "bubbles",
+            "position": {
+              "x": 5,
+              "y": 1
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "crabby",
+            "position": {
+              "x": 2,
+              "y": 1
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "jiggly",
+            "position": {
+              "x": 0,
+              "y": 1
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "moltie",
+            "position": {
+              "x": 1,
+              "y": 1
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "puff",
+            "position": {
+              "x": 3,
+              "y": 1
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "tidy",
+            "position": {
+              "x": 4,
+              "y": 1
+            },
+            "score": 0
+          }
+        ],
+        "decorations": [
+          {
+            "decoration_id": "turn-1-bubbles-lamp",
+            "position": {
+              "x": 5,
+              "y": 0
+            },
+            "tile": "lamp"
+          },
+          {
+            "decoration_id": "turn-1-jiggly-flower",
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "tile": "flower"
+          },
+          {
+            "decoration_id": "turn-1-moltie-lamp",
+            "position": {
+              "x": 1,
+              "y": 0
+            },
+            "tile": "lamp"
+          },
+          {
+            "decoration_id": "turn-1-tidy-flower",
+            "position": {
+              "x": 4,
+              "y": 0
+            },
+            "tile": "flower"
+          }
+        ],
+        "height": 6,
+        "notes": [
+          {
+            "author_id": "crabby",
+            "message": "guard the berry lane",
+            "note_id": "turn-1-crabby-note",
+            "position": {
+              "x": 2,
+              "y": 0
+            }
+          },
+          {
+            "author_id": "puff",
+            "message": "sing before moving",
+            "note_id": "turn-1-puff-note",
+            "position": {
+              "x": 3,
+              "y": 0
+            }
+          }
+        ],
+        "quests": [
+          {
+            "author_id": "jiggly",
+            "description": "Six agents coordinate decorations, notes, and snacks.",
+            "quest_id": "turn-0-jiggly-quest",
+            "status": "open",
+            "title": "Medium party picnic"
+          }
+        ],
+        "resources": [
+          {
+            "position": {
+              "x": 5,
+              "y": 3
+            },
+            "resource_id": "berry-1",
+            "value": 1
+          },
+          {
+            "position": {
+              "x": 4,
+              "y": 2
+            },
+            "resource_id": "berry-2",
+            "value": 1
+          },
+          {
+            "position": {
+              "x": 1,
+              "y": 5
+            },
+            "resource_id": "berry-3",
+            "value": 1
+          },
+          {
+            "position": {
+              "x": 5,
+              "y": 4
+            },
+            "resource_id": "berry-4",
+            "value": 1
+          }
+        ],
+        "room": {
+          "description": "A tiny cozy room where agents can play, build, and relax.",
+          "mood": "cozy",
+          "name": "Jiggly Grove"
+        },
+        "self": {
+          "agent_id": "jiggly",
+          "position": {
+            "x": 0,
+            "y": 1
+          },
+          "score": 0
+        },
+        "turn": 3,
+        "walls": [],
+        "width": 6
+      },
+      "turn": 3
+    }
+  ],
+  "story_markdown": "# Agent Playground Story\n\nSeed: 23\n\n- Turn 0: bubbles said: bubble lights ready\n- Turn 0: crabby said: snack patrol online\n- Turn 0: jiggly posted quest: Medium party picnic \u2014 Six agents coordinate decorations, notes, and snacks.\n- Turn 0: moltie said: I'll watch the lantern row\n- Turn 0: puff said: I'll keep the cozy beat\n- Turn 0: tidy said: tidying a safe path\n- Turn 1: bubbles placed lamp at (5,0)\n- Turn 1: crabby left a note: guard the berry lane\n- Turn 1: jiggly placed flower at (0,0)\n- Turn 1: moltie placed lamp at (1,0)\n- Turn 1: puff left a note: sing before moving\n- Turn 1: tidy placed flower at (4,0)\n"
+}

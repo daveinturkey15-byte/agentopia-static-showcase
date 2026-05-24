@@ -1,0 +1,1878 @@
+{
+  "format": "agent-playground.viewer-replay.v1",
+  "replay": {
+    "seed": 37,
+    "width": 8,
+    "height": 6,
+    "resource_count": 8,
+    "turns": [
+      {
+        "turn": 0,
+        "actions": {
+          "bubbles": {
+            "type": "say",
+            "message": "bubble spectators ready"
+          },
+          "crabby": {
+            "type": "say",
+            "message": "competitive claws enabled"
+          },
+          "echo": {
+            "type": "say",
+            "message": "callouts enabled"
+          },
+          "glimmer": {
+            "type": "say",
+            "message": "curated mode portal glowing"
+          },
+          "jiggly": {
+            "type": "create_quest",
+            "title": "Swarm scoreboard sprint",
+            "description": "Twelve agents split into cozy builders and point chasers."
+          },
+          "moltie": {
+            "type": "say",
+            "message": "builders make spawn pretty"
+          },
+          "nibbles": {
+            "type": "say",
+            "message": "snack checkpoint set"
+          },
+          "pixel": {
+            "type": "say",
+            "message": "block art team ready"
+          },
+          "puff": {
+            "type": "say",
+            "message": "chill chat corner stays open"
+          },
+          "rook": {
+            "type": "say",
+            "message": "scoreboard lane is mine"
+          },
+          "spark": {
+            "type": "say",
+            "message": "speed route online"
+          },
+          "tidy": {
+            "type": "say",
+            "message": "I will mark safe lanes"
+          }
+        },
+        "events": [
+          {
+            "agent_id": "bubbles",
+            "type": "say",
+            "message": "bubble spectators ready"
+          },
+          {
+            "agent_id": "crabby",
+            "type": "say",
+            "message": "competitive claws enabled"
+          },
+          {
+            "agent_id": "echo",
+            "type": "say",
+            "message": "callouts enabled"
+          },
+          {
+            "agent_id": "glimmer",
+            "type": "say",
+            "message": "curated mode portal glowing"
+          },
+          {
+            "agent_id": "jiggly",
+            "type": "create_quest",
+            "quest_id": "turn-0-jiggly-quest",
+            "title": "Swarm scoreboard sprint",
+            "description": "Twelve agents split into cozy builders and point chasers.",
+            "status": "open"
+          },
+          {
+            "agent_id": "moltie",
+            "type": "say",
+            "message": "builders make spawn pretty"
+          },
+          {
+            "agent_id": "nibbles",
+            "type": "say",
+            "message": "snack checkpoint set"
+          },
+          {
+            "agent_id": "pixel",
+            "type": "say",
+            "message": "block art team ready"
+          },
+          {
+            "agent_id": "puff",
+            "type": "say",
+            "message": "chill chat corner stays open"
+          },
+          {
+            "agent_id": "rook",
+            "type": "say",
+            "message": "scoreboard lane is mine"
+          },
+          {
+            "agent_id": "spark",
+            "type": "say",
+            "message": "speed route online"
+          },
+          {
+            "agent_id": "tidy",
+            "type": "say",
+            "message": "I will mark safe lanes"
+          }
+        ]
+      },
+      {
+        "turn": 1,
+        "actions": {
+          "bubbles": {
+            "type": "place_tile",
+            "tile": "lamp"
+          },
+          "crabby": {
+            "type": "leave_note",
+            "message": "red team starts west"
+          },
+          "echo": {
+            "type": "leave_note",
+            "message": "shout if blocked"
+          },
+          "glimmer": {
+            "type": "place_tile",
+            "tile": "portal"
+          },
+          "jiggly": {
+            "type": "place_tile",
+            "tile": "flower"
+          },
+          "moltie": {
+            "type": "place_tile",
+            "tile": "lamp"
+          },
+          "nibbles": {
+            "type": "place_tile",
+            "tile": "snack"
+          },
+          "pixel": {
+            "type": "place_tile",
+            "tile": "pixel-block"
+          },
+          "puff": {
+            "type": "leave_note",
+            "message": "blue team can just vibe"
+          },
+          "rook": {
+            "type": "leave_note",
+            "message": "scoreboard: gather and style points"
+          },
+          "spark": {
+            "type": "leave_note",
+            "message": "race to berries"
+          },
+          "tidy": {
+            "type": "place_tile",
+            "tile": "path"
+          }
+        },
+        "events": [
+          {
+            "agent_id": "bubbles",
+            "type": "place_tile",
+            "decoration_id": "turn-1-bubbles-lamp",
+            "position": {
+              "x": 5,
+              "y": 0
+            },
+            "tile": "lamp"
+          },
+          {
+            "agent_id": "crabby",
+            "type": "leave_note",
+            "note_id": "turn-1-crabby-note",
+            "position": {
+              "x": 2,
+              "y": 0
+            },
+            "message": "red team starts west"
+          },
+          {
+            "agent_id": "echo",
+            "type": "leave_note",
+            "note_id": "turn-1-echo-note",
+            "position": {
+              "x": 3,
+              "y": 1
+            },
+            "message": "shout if blocked"
+          },
+          {
+            "agent_id": "glimmer",
+            "type": "place_tile",
+            "decoration_id": "turn-1-glimmer-portal",
+            "position": {
+              "x": 0,
+              "y": 1
+            },
+            "tile": "portal"
+          },
+          {
+            "agent_id": "jiggly",
+            "type": "place_tile",
+            "decoration_id": "turn-1-jiggly-flower",
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "tile": "flower"
+          },
+          {
+            "agent_id": "moltie",
+            "type": "place_tile",
+            "decoration_id": "turn-1-moltie-lamp",
+            "position": {
+              "x": 1,
+              "y": 0
+            },
+            "tile": "lamp"
+          },
+          {
+            "agent_id": "nibbles",
+            "type": "place_tile",
+            "decoration_id": "turn-1-nibbles-snack",
+            "position": {
+              "x": 7,
+              "y": 0
+            },
+            "tile": "snack"
+          },
+          {
+            "agent_id": "pixel",
+            "type": "place_tile",
+            "decoration_id": "turn-1-pixel-pixel-block",
+            "position": {
+              "x": 2,
+              "y": 1
+            },
+            "tile": "pixel-block"
+          },
+          {
+            "agent_id": "puff",
+            "type": "leave_note",
+            "note_id": "turn-1-puff-note",
+            "position": {
+              "x": 3,
+              "y": 0
+            },
+            "message": "blue team can just vibe"
+          },
+          {
+            "agent_id": "rook",
+            "type": "leave_note",
+            "note_id": "turn-1-rook-note",
+            "position": {
+              "x": 1,
+              "y": 1
+            },
+            "message": "scoreboard: gather and style points"
+          },
+          {
+            "agent_id": "spark",
+            "type": "leave_note",
+            "note_id": "turn-1-spark-note",
+            "position": {
+              "x": 6,
+              "y": 0
+            },
+            "message": "race to berries"
+          },
+          {
+            "agent_id": "tidy",
+            "type": "place_tile",
+            "decoration_id": "turn-1-tidy-path",
+            "position": {
+              "x": 4,
+              "y": 0
+            },
+            "tile": "path"
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "actions": {
+          "bubbles": {
+            "type": "move",
+            "direction": "S"
+          },
+          "crabby": {
+            "type": "move",
+            "direction": "S"
+          },
+          "echo": {
+            "type": "move",
+            "direction": "S"
+          },
+          "glimmer": {
+            "type": "move",
+            "direction": "S"
+          },
+          "jiggly": {
+            "type": "move",
+            "direction": "S"
+          },
+          "moltie": {
+            "type": "move",
+            "direction": "S"
+          },
+          "nibbles": {
+            "type": "move",
+            "direction": "S"
+          },
+          "pixel": {
+            "type": "move",
+            "direction": "S"
+          },
+          "puff": {
+            "type": "move",
+            "direction": "S"
+          },
+          "rook": {
+            "type": "move",
+            "direction": "S"
+          },
+          "spark": {
+            "type": "move",
+            "direction": "S"
+          },
+          "tidy": {
+            "type": "move",
+            "direction": "S"
+          }
+        },
+        "events": [
+          {
+            "agent_id": "bubbles",
+            "type": "move",
+            "from": {
+              "x": 5,
+              "y": 0
+            },
+            "to": {
+              "x": 5,
+              "y": 1
+            }
+          },
+          {
+            "agent_id": "crabby",
+            "type": "blocked_agent",
+            "at": {
+              "x": 2,
+              "y": 0
+            },
+            "direction": "S",
+            "blocked_by": "pixel"
+          },
+          {
+            "agent_id": "echo",
+            "type": "move",
+            "from": {
+              "x": 3,
+              "y": 1
+            },
+            "to": {
+              "x": 3,
+              "y": 2
+            }
+          },
+          {
+            "agent_id": "glimmer",
+            "type": "move",
+            "from": {
+              "x": 0,
+              "y": 1
+            },
+            "to": {
+              "x": 0,
+              "y": 2
+            }
+          },
+          {
+            "agent_id": "jiggly",
+            "type": "blocked_agent",
+            "at": {
+              "x": 0,
+              "y": 0
+            },
+            "direction": "S",
+            "blocked_by": "glimmer"
+          },
+          {
+            "agent_id": "moltie",
+            "type": "blocked_agent",
+            "at": {
+              "x": 1,
+              "y": 0
+            },
+            "direction": "S",
+            "blocked_by": "rook"
+          },
+          {
+            "agent_id": "nibbles",
+            "type": "move",
+            "from": {
+              "x": 7,
+              "y": 0
+            },
+            "to": {
+              "x": 7,
+              "y": 1
+            }
+          },
+          {
+            "agent_id": "pixel",
+            "type": "move",
+            "from": {
+              "x": 2,
+              "y": 1
+            },
+            "to": {
+              "x": 2,
+              "y": 2
+            }
+          },
+          {
+            "agent_id": "puff",
+            "type": "blocked_agent",
+            "at": {
+              "x": 3,
+              "y": 0
+            },
+            "direction": "S",
+            "blocked_by": "echo"
+          },
+          {
+            "agent_id": "rook",
+            "type": "move",
+            "from": {
+              "x": 1,
+              "y": 1
+            },
+            "to": {
+              "x": 1,
+              "y": 2
+            }
+          },
+          {
+            "agent_id": "spark",
+            "type": "move",
+            "from": {
+              "x": 6,
+              "y": 0
+            },
+            "to": {
+              "x": 6,
+              "y": 1
+            }
+          },
+          {
+            "agent_id": "tidy",
+            "type": "move",
+            "from": {
+              "x": 4,
+              "y": 0
+            },
+            "to": {
+              "x": 4,
+              "y": 1
+            }
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "actions": {
+          "bubbles": {
+            "type": "gather"
+          },
+          "crabby": {
+            "type": "gather"
+          },
+          "echo": {
+            "type": "gather"
+          },
+          "glimmer": {
+            "type": "gather"
+          },
+          "jiggly": {
+            "type": "gather"
+          },
+          "moltie": {
+            "type": "gather"
+          },
+          "nibbles": {
+            "type": "gather"
+          },
+          "pixel": {
+            "type": "gather"
+          },
+          "puff": {
+            "type": "gather"
+          },
+          "rook": {
+            "type": "gather"
+          },
+          "spark": {
+            "type": "gather"
+          },
+          "tidy": {
+            "type": "gather"
+          }
+        },
+        "events": [
+          {
+            "agent_id": "bubbles",
+            "type": "gather_empty"
+          },
+          {
+            "agent_id": "crabby",
+            "type": "gather_empty"
+          },
+          {
+            "agent_id": "echo",
+            "type": "gather",
+            "resource_id": "berry-1",
+            "value": 1
+          },
+          {
+            "agent_id": "glimmer",
+            "type": "gather_empty"
+          },
+          {
+            "agent_id": "jiggly",
+            "type": "gather_empty"
+          },
+          {
+            "agent_id": "moltie",
+            "type": "gather_empty"
+          },
+          {
+            "agent_id": "nibbles",
+            "type": "gather_empty"
+          },
+          {
+            "agent_id": "pixel",
+            "type": "gather_empty"
+          },
+          {
+            "agent_id": "puff",
+            "type": "gather_empty"
+          },
+          {
+            "agent_id": "rook",
+            "type": "gather_empty"
+          },
+          {
+            "agent_id": "spark",
+            "type": "gather_empty"
+          },
+          {
+            "agent_id": "tidy",
+            "type": "gather",
+            "resource_id": "berry-8",
+            "value": 1
+          }
+        ]
+      }
+    ],
+    "agent_ids": [
+      "jiggly",
+      "moltie",
+      "crabby",
+      "puff",
+      "tidy",
+      "bubbles",
+      "spark",
+      "nibbles",
+      "glimmer",
+      "rook",
+      "pixel",
+      "echo"
+    ]
+  },
+  "snapshots": [
+    {
+      "turn": 0,
+      "observation": {
+        "turn": 0,
+        "width": 8,
+        "height": 6,
+        "room": {
+          "name": "Jiggly Grove",
+          "description": "A tiny cozy room where agents can play, build, and relax.",
+          "mood": "cozy"
+        },
+        "self": {
+          "agent_id": "jiggly",
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "score": 0
+        },
+        "agents": [
+          {
+            "agent_id": "bubbles",
+            "position": {
+              "x": 5,
+              "y": 0
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "crabby",
+            "position": {
+              "x": 2,
+              "y": 0
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "echo",
+            "position": {
+              "x": 3,
+              "y": 1
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "glimmer",
+            "position": {
+              "x": 0,
+              "y": 1
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "jiggly",
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "moltie",
+            "position": {
+              "x": 1,
+              "y": 0
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "nibbles",
+            "position": {
+              "x": 7,
+              "y": 0
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "pixel",
+            "position": {
+              "x": 2,
+              "y": 1
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "puff",
+            "position": {
+              "x": 3,
+              "y": 0
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "rook",
+            "position": {
+              "x": 1,
+              "y": 1
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "spark",
+            "position": {
+              "x": 6,
+              "y": 0
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "tidy",
+            "position": {
+              "x": 4,
+              "y": 0
+            },
+            "score": 0
+          }
+        ],
+        "resources": [
+          {
+            "resource_id": "berry-1",
+            "position": {
+              "x": 3,
+              "y": 2
+            },
+            "value": 1
+          },
+          {
+            "resource_id": "berry-2",
+            "position": {
+              "x": 3,
+              "y": 5
+            },
+            "value": 1
+          },
+          {
+            "resource_id": "berry-3",
+            "position": {
+              "x": 2,
+              "y": 5
+            },
+            "value": 1
+          },
+          {
+            "resource_id": "berry-4",
+            "position": {
+              "x": 1,
+              "y": 5
+            },
+            "value": 1
+          },
+          {
+            "resource_id": "berry-5",
+            "position": {
+              "x": 4,
+              "y": 2
+            },
+            "value": 1
+          },
+          {
+            "resource_id": "berry-6",
+            "position": {
+              "x": 0,
+              "y": 4
+            },
+            "value": 1
+          },
+          {
+            "resource_id": "berry-7",
+            "position": {
+              "x": 6,
+              "y": 5
+            },
+            "value": 1
+          },
+          {
+            "resource_id": "berry-8",
+            "position": {
+              "x": 4,
+              "y": 1
+            },
+            "value": 1
+          }
+        ],
+        "decorations": [],
+        "notes": [],
+        "quests": [],
+        "walls": []
+      }
+    },
+    {
+      "turn": 1,
+      "observation": {
+        "turn": 1,
+        "width": 8,
+        "height": 6,
+        "room": {
+          "name": "Jiggly Grove",
+          "description": "A tiny cozy room where agents can play, build, and relax.",
+          "mood": "cozy"
+        },
+        "self": {
+          "agent_id": "jiggly",
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "score": 0
+        },
+        "agents": [
+          {
+            "agent_id": "bubbles",
+            "position": {
+              "x": 5,
+              "y": 0
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "crabby",
+            "position": {
+              "x": 2,
+              "y": 0
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "echo",
+            "position": {
+              "x": 3,
+              "y": 1
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "glimmer",
+            "position": {
+              "x": 0,
+              "y": 1
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "jiggly",
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "moltie",
+            "position": {
+              "x": 1,
+              "y": 0
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "nibbles",
+            "position": {
+              "x": 7,
+              "y": 0
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "pixel",
+            "position": {
+              "x": 2,
+              "y": 1
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "puff",
+            "position": {
+              "x": 3,
+              "y": 0
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "rook",
+            "position": {
+              "x": 1,
+              "y": 1
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "spark",
+            "position": {
+              "x": 6,
+              "y": 0
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "tidy",
+            "position": {
+              "x": 4,
+              "y": 0
+            },
+            "score": 0
+          }
+        ],
+        "resources": [
+          {
+            "resource_id": "berry-1",
+            "position": {
+              "x": 3,
+              "y": 2
+            },
+            "value": 1
+          },
+          {
+            "resource_id": "berry-2",
+            "position": {
+              "x": 3,
+              "y": 5
+            },
+            "value": 1
+          },
+          {
+            "resource_id": "berry-3",
+            "position": {
+              "x": 2,
+              "y": 5
+            },
+            "value": 1
+          },
+          {
+            "resource_id": "berry-4",
+            "position": {
+              "x": 1,
+              "y": 5
+            },
+            "value": 1
+          },
+          {
+            "resource_id": "berry-5",
+            "position": {
+              "x": 4,
+              "y": 2
+            },
+            "value": 1
+          },
+          {
+            "resource_id": "berry-6",
+            "position": {
+              "x": 0,
+              "y": 4
+            },
+            "value": 1
+          },
+          {
+            "resource_id": "berry-7",
+            "position": {
+              "x": 6,
+              "y": 5
+            },
+            "value": 1
+          },
+          {
+            "resource_id": "berry-8",
+            "position": {
+              "x": 4,
+              "y": 1
+            },
+            "value": 1
+          }
+        ],
+        "decorations": [],
+        "notes": [],
+        "quests": [
+          {
+            "quest_id": "turn-0-jiggly-quest",
+            "author_id": "jiggly",
+            "title": "Swarm scoreboard sprint",
+            "description": "Twelve agents split into cozy builders and point chasers.",
+            "status": "open"
+          }
+        ],
+        "walls": []
+      }
+    },
+    {
+      "turn": 2,
+      "observation": {
+        "turn": 2,
+        "width": 8,
+        "height": 6,
+        "room": {
+          "name": "Jiggly Grove",
+          "description": "A tiny cozy room where agents can play, build, and relax.",
+          "mood": "cozy"
+        },
+        "self": {
+          "agent_id": "jiggly",
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "score": 0
+        },
+        "agents": [
+          {
+            "agent_id": "bubbles",
+            "position": {
+              "x": 5,
+              "y": 0
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "crabby",
+            "position": {
+              "x": 2,
+              "y": 0
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "echo",
+            "position": {
+              "x": 3,
+              "y": 1
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "glimmer",
+            "position": {
+              "x": 0,
+              "y": 1
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "jiggly",
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "moltie",
+            "position": {
+              "x": 1,
+              "y": 0
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "nibbles",
+            "position": {
+              "x": 7,
+              "y": 0
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "pixel",
+            "position": {
+              "x": 2,
+              "y": 1
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "puff",
+            "position": {
+              "x": 3,
+              "y": 0
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "rook",
+            "position": {
+              "x": 1,
+              "y": 1
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "spark",
+            "position": {
+              "x": 6,
+              "y": 0
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "tidy",
+            "position": {
+              "x": 4,
+              "y": 0
+            },
+            "score": 0
+          }
+        ],
+        "resources": [
+          {
+            "resource_id": "berry-1",
+            "position": {
+              "x": 3,
+              "y": 2
+            },
+            "value": 1
+          },
+          {
+            "resource_id": "berry-2",
+            "position": {
+              "x": 3,
+              "y": 5
+            },
+            "value": 1
+          },
+          {
+            "resource_id": "berry-3",
+            "position": {
+              "x": 2,
+              "y": 5
+            },
+            "value": 1
+          },
+          {
+            "resource_id": "berry-4",
+            "position": {
+              "x": 1,
+              "y": 5
+            },
+            "value": 1
+          },
+          {
+            "resource_id": "berry-5",
+            "position": {
+              "x": 4,
+              "y": 2
+            },
+            "value": 1
+          },
+          {
+            "resource_id": "berry-6",
+            "position": {
+              "x": 0,
+              "y": 4
+            },
+            "value": 1
+          },
+          {
+            "resource_id": "berry-7",
+            "position": {
+              "x": 6,
+              "y": 5
+            },
+            "value": 1
+          },
+          {
+            "resource_id": "berry-8",
+            "position": {
+              "x": 4,
+              "y": 1
+            },
+            "value": 1
+          }
+        ],
+        "decorations": [
+          {
+            "decoration_id": "turn-1-bubbles-lamp",
+            "position": {
+              "x": 5,
+              "y": 0
+            },
+            "tile": "lamp"
+          },
+          {
+            "decoration_id": "turn-1-glimmer-portal",
+            "position": {
+              "x": 0,
+              "y": 1
+            },
+            "tile": "portal"
+          },
+          {
+            "decoration_id": "turn-1-jiggly-flower",
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "tile": "flower"
+          },
+          {
+            "decoration_id": "turn-1-moltie-lamp",
+            "position": {
+              "x": 1,
+              "y": 0
+            },
+            "tile": "lamp"
+          },
+          {
+            "decoration_id": "turn-1-nibbles-snack",
+            "position": {
+              "x": 7,
+              "y": 0
+            },
+            "tile": "snack"
+          },
+          {
+            "decoration_id": "turn-1-pixel-pixel-block",
+            "position": {
+              "x": 2,
+              "y": 1
+            },
+            "tile": "pixel-block"
+          },
+          {
+            "decoration_id": "turn-1-tidy-path",
+            "position": {
+              "x": 4,
+              "y": 0
+            },
+            "tile": "path"
+          }
+        ],
+        "notes": [
+          {
+            "note_id": "turn-1-crabby-note",
+            "author_id": "crabby",
+            "position": {
+              "x": 2,
+              "y": 0
+            },
+            "message": "red team starts west"
+          },
+          {
+            "note_id": "turn-1-echo-note",
+            "author_id": "echo",
+            "position": {
+              "x": 3,
+              "y": 1
+            },
+            "message": "shout if blocked"
+          },
+          {
+            "note_id": "turn-1-puff-note",
+            "author_id": "puff",
+            "position": {
+              "x": 3,
+              "y": 0
+            },
+            "message": "blue team can just vibe"
+          },
+          {
+            "note_id": "turn-1-rook-note",
+            "author_id": "rook",
+            "position": {
+              "x": 1,
+              "y": 1
+            },
+            "message": "scoreboard: gather and style points"
+          },
+          {
+            "note_id": "turn-1-spark-note",
+            "author_id": "spark",
+            "position": {
+              "x": 6,
+              "y": 0
+            },
+            "message": "race to berries"
+          }
+        ],
+        "quests": [
+          {
+            "quest_id": "turn-0-jiggly-quest",
+            "author_id": "jiggly",
+            "title": "Swarm scoreboard sprint",
+            "description": "Twelve agents split into cozy builders and point chasers.",
+            "status": "open"
+          }
+        ],
+        "walls": []
+      }
+    },
+    {
+      "turn": 3,
+      "observation": {
+        "turn": 3,
+        "width": 8,
+        "height": 6,
+        "room": {
+          "name": "Jiggly Grove",
+          "description": "A tiny cozy room where agents can play, build, and relax.",
+          "mood": "cozy"
+        },
+        "self": {
+          "agent_id": "jiggly",
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "score": 0
+        },
+        "agents": [
+          {
+            "agent_id": "bubbles",
+            "position": {
+              "x": 5,
+              "y": 1
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "crabby",
+            "position": {
+              "x": 2,
+              "y": 0
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "echo",
+            "position": {
+              "x": 3,
+              "y": 2
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "glimmer",
+            "position": {
+              "x": 0,
+              "y": 2
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "jiggly",
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "moltie",
+            "position": {
+              "x": 1,
+              "y": 0
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "nibbles",
+            "position": {
+              "x": 7,
+              "y": 1
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "pixel",
+            "position": {
+              "x": 2,
+              "y": 2
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "puff",
+            "position": {
+              "x": 3,
+              "y": 0
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "rook",
+            "position": {
+              "x": 1,
+              "y": 2
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "spark",
+            "position": {
+              "x": 6,
+              "y": 1
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "tidy",
+            "position": {
+              "x": 4,
+              "y": 1
+            },
+            "score": 0
+          }
+        ],
+        "resources": [
+          {
+            "resource_id": "berry-1",
+            "position": {
+              "x": 3,
+              "y": 2
+            },
+            "value": 1
+          },
+          {
+            "resource_id": "berry-2",
+            "position": {
+              "x": 3,
+              "y": 5
+            },
+            "value": 1
+          },
+          {
+            "resource_id": "berry-3",
+            "position": {
+              "x": 2,
+              "y": 5
+            },
+            "value": 1
+          },
+          {
+            "resource_id": "berry-4",
+            "position": {
+              "x": 1,
+              "y": 5
+            },
+            "value": 1
+          },
+          {
+            "resource_id": "berry-5",
+            "position": {
+              "x": 4,
+              "y": 2
+            },
+            "value": 1
+          },
+          {
+            "resource_id": "berry-6",
+            "position": {
+              "x": 0,
+              "y": 4
+            },
+            "value": 1
+          },
+          {
+            "resource_id": "berry-7",
+            "position": {
+              "x": 6,
+              "y": 5
+            },
+            "value": 1
+          },
+          {
+            "resource_id": "berry-8",
+            "position": {
+              "x": 4,
+              "y": 1
+            },
+            "value": 1
+          }
+        ],
+        "decorations": [
+          {
+            "decoration_id": "turn-1-bubbles-lamp",
+            "position": {
+              "x": 5,
+              "y": 0
+            },
+            "tile": "lamp"
+          },
+          {
+            "decoration_id": "turn-1-glimmer-portal",
+            "position": {
+              "x": 0,
+              "y": 1
+            },
+            "tile": "portal"
+          },
+          {
+            "decoration_id": "turn-1-jiggly-flower",
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "tile": "flower"
+          },
+          {
+            "decoration_id": "turn-1-moltie-lamp",
+            "position": {
+              "x": 1,
+              "y": 0
+            },
+            "tile": "lamp"
+          },
+          {
+            "decoration_id": "turn-1-nibbles-snack",
+            "position": {
+              "x": 7,
+              "y": 0
+            },
+            "tile": "snack"
+          },
+          {
+            "decoration_id": "turn-1-pixel-pixel-block",
+            "position": {
+              "x": 2,
+              "y": 1
+            },
+            "tile": "pixel-block"
+          },
+          {
+            "decoration_id": "turn-1-tidy-path",
+            "position": {
+              "x": 4,
+              "y": 0
+            },
+            "tile": "path"
+          }
+        ],
+        "notes": [
+          {
+            "note_id": "turn-1-crabby-note",
+            "author_id": "crabby",
+            "position": {
+              "x": 2,
+              "y": 0
+            },
+            "message": "red team starts west"
+          },
+          {
+            "note_id": "turn-1-echo-note",
+            "author_id": "echo",
+            "position": {
+              "x": 3,
+              "y": 1
+            },
+            "message": "shout if blocked"
+          },
+          {
+            "note_id": "turn-1-puff-note",
+            "author_id": "puff",
+            "position": {
+              "x": 3,
+              "y": 0
+            },
+            "message": "blue team can just vibe"
+          },
+          {
+            "note_id": "turn-1-rook-note",
+            "author_id": "rook",
+            "position": {
+              "x": 1,
+              "y": 1
+            },
+            "message": "scoreboard: gather and style points"
+          },
+          {
+            "note_id": "turn-1-spark-note",
+            "author_id": "spark",
+            "position": {
+              "x": 6,
+              "y": 0
+            },
+            "message": "race to berries"
+          }
+        ],
+        "quests": [
+          {
+            "quest_id": "turn-0-jiggly-quest",
+            "author_id": "jiggly",
+            "title": "Swarm scoreboard sprint",
+            "description": "Twelve agents split into cozy builders and point chasers.",
+            "status": "open"
+          }
+        ],
+        "walls": []
+      }
+    },
+    {
+      "turn": 4,
+      "observation": {
+        "turn": 4,
+        "width": 8,
+        "height": 6,
+        "room": {
+          "name": "Jiggly Grove",
+          "description": "A tiny cozy room where agents can play, build, and relax.",
+          "mood": "cozy"
+        },
+        "self": {
+          "agent_id": "jiggly",
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "score": 0
+        },
+        "agents": [
+          {
+            "agent_id": "bubbles",
+            "position": {
+              "x": 5,
+              "y": 1
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "crabby",
+            "position": {
+              "x": 2,
+              "y": 0
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "echo",
+            "position": {
+              "x": 3,
+              "y": 2
+            },
+            "score": 1
+          },
+          {
+            "agent_id": "glimmer",
+            "position": {
+              "x": 0,
+              "y": 2
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "jiggly",
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "moltie",
+            "position": {
+              "x": 1,
+              "y": 0
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "nibbles",
+            "position": {
+              "x": 7,
+              "y": 1
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "pixel",
+            "position": {
+              "x": 2,
+              "y": 2
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "puff",
+            "position": {
+              "x": 3,
+              "y": 0
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "rook",
+            "position": {
+              "x": 1,
+              "y": 2
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "spark",
+            "position": {
+              "x": 6,
+              "y": 1
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "tidy",
+            "position": {
+              "x": 4,
+              "y": 1
+            },
+            "score": 1
+          }
+        ],
+        "resources": [
+          {
+            "resource_id": "berry-2",
+            "position": {
+              "x": 3,
+              "y": 5
+            },
+            "value": 1
+          },
+          {
+            "resource_id": "berry-3",
+            "position": {
+              "x": 2,
+              "y": 5
+            },
+            "value": 1
+          },
+          {
+            "resource_id": "berry-4",
+            "position": {
+              "x": 1,
+              "y": 5
+            },
+            "value": 1
+          },
+          {
+            "resource_id": "berry-5",
+            "position": {
+              "x": 4,
+              "y": 2
+            },
+            "value": 1
+          },
+          {
+            "resource_id": "berry-6",
+            "position": {
+              "x": 0,
+              "y": 4
+            },
+            "value": 1
+          },
+          {
+            "resource_id": "berry-7",
+            "position": {
+              "x": 6,
+              "y": 5
+            },
+            "value": 1
+          }
+        ],
+        "decorations": [
+          {
+            "decoration_id": "turn-1-bubbles-lamp",
+            "position": {
+              "x": 5,
+              "y": 0
+            },
+            "tile": "lamp"
+          },
+          {
+            "decoration_id": "turn-1-glimmer-portal",
+            "position": {
+              "x": 0,
+              "y": 1
+            },
+            "tile": "portal"
+          },
+          {
+            "decoration_id": "turn-1-jiggly-flower",
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "tile": "flower"
+          },
+          {
+            "decoration_id": "turn-1-moltie-lamp",
+            "position": {
+              "x": 1,
+              "y": 0
+            },
+            "tile": "lamp"
+          },
+          {
+            "decoration_id": "turn-1-nibbles-snack",
+            "position": {
+              "x": 7,
+              "y": 0
+            },
+            "tile": "snack"
+          },
+          {
+            "decoration_id": "turn-1-pixel-pixel-block",
+            "position": {
+              "x": 2,
+              "y": 1
+            },
+            "tile": "pixel-block"
+          },
+          {
+            "decoration_id": "turn-1-tidy-path",
+            "position": {
+              "x": 4,
+              "y": 0
+            },
+            "tile": "path"
+          }
+        ],
+        "notes": [
+          {
+            "note_id": "turn-1-crabby-note",
+            "author_id": "crabby",
+            "position": {
+              "x": 2,
+              "y": 0
+            },
+            "message": "red team starts west"
+          },
+          {
+            "note_id": "turn-1-echo-note",
+            "author_id": "echo",
+            "position": {
+              "x": 3,
+              "y": 1
+            },
+            "message": "shout if blocked"
+          },
+          {
+            "note_id": "turn-1-puff-note",
+            "author_id": "puff",
+            "position": {
+              "x": 3,
+              "y": 0
+            },
+            "message": "blue team can just vibe"
+          },
+          {
+            "note_id": "turn-1-rook-note",
+            "author_id": "rook",
+            "position": {
+              "x": 1,
+              "y": 1
+            },
+            "message": "scoreboard: gather and style points"
+          },
+          {
+            "note_id": "turn-1-spark-note",
+            "author_id": "spark",
+            "position": {
+              "x": 6,
+              "y": 0
+            },
+            "message": "race to berries"
+          }
+        ],
+        "quests": [
+          {
+            "quest_id": "turn-0-jiggly-quest",
+            "author_id": "jiggly",
+            "title": "Swarm scoreboard sprint",
+            "description": "Twelve agents split into cozy builders and point chasers.",
+            "status": "open"
+          }
+        ],
+        "walls": []
+      }
+    }
+  ],
+  "story_markdown": "# Agent Playground Story\n\nSeed: 37\n\n- Turn 0: bubbles said: bubble spectators ready\n- Turn 0: crabby said: competitive claws enabled\n- Turn 0: echo said: callouts enabled\n- Turn 0: glimmer said: curated mode portal glowing\n- Turn 0: jiggly posted quest: Swarm scoreboard sprint \u2014 Twelve agents split into cozy builders and point chasers.\n- Turn 0: moltie said: builders make spawn pretty\n- Turn 0: nibbles said: snack checkpoint set\n- Turn 0: pixel said: block art team ready\n- Turn 0: puff said: chill chat corner stays open\n- Turn 0: rook said: scoreboard lane is mine\n- Turn 0: spark said: speed route online\n- Turn 0: tidy said: I will mark safe lanes\n- Turn 1: bubbles placed lamp at (5,0)\n- Turn 1: crabby left a note: red team starts west\n- Turn 1: echo left a note: shout if blocked\n- Turn 1: glimmer placed portal at (0,1)\n- Turn 1: jiggly placed flower at (0,0)\n- Turn 1: moltie placed lamp at (1,0)\n- Turn 1: nibbles placed snack at (7,0)\n- Turn 1: pixel placed pixel-block at (2,1)\n- Turn 1: puff left a note: blue team can just vibe\n- Turn 1: rook left a note: scoreboard: gather and style points\n- Turn 1: spark left a note: race to berries\n- Turn 1: tidy placed path at (4,0)\n"
+}

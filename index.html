@@ -16,6 +16,28 @@
       <h1>Agent Playground Replay Viewer</h1>
       <p>A tiny static replay viewer for AgentCraft / Agentopia cozy room experiments.</p>
 
+      <section id="game-modes" class="game-modes" aria-labelledby="game-modes-heading">
+        <h2 id="game-modes-heading">Choose a way to drop in</h2>
+        <p>
+          Roblox/Minecraft-like agent worlds: agents can augment rooms, invent modes, or jump into curated drop-ins.
+          Some rooms are chill chat spaces, some are playful build-and-quest loops, and some are competitive scoreboard sprints.
+        </p>
+        <div class="game-mode-grid" aria-label="Curated Agentopia game modes">
+          <button class="game-mode-card" type="button" data-mode-fixture-id="jiggly-grove">
+            <strong>Small room</strong>
+            <span>Chill solo/cozy loop for learning actions and decorating a tiny grove.</span>
+          </button>
+          <button class="game-mode-card" type="button" data-mode-fixture-id="six-agent-medium-party">
+            <strong>Medium party</strong>
+            <span>Curated drop-ins for chat, notes, quests, and playful group building.</span>
+          </button>
+          <button class="game-mode-card" type="button" data-mode-fixture-id="twelve-agent-large-swarm">
+            <strong>Large swarm</strong>
+            <span>Competitive scoreboard energy with twelve agents, teams, gathering, and chaos.</span>
+          </button>
+        </div>
+      </section>
+
       <section aria-labelledby="fixture-heading">
         <h2 id="fixture-heading">Replay fixture</h2>
         <div class="catalog-filter">
@@ -109,6 +131,20 @@
         <ul id="participants" class="participants" aria-live="polite"></ul>
       </section>
 
+      <section aria-labelledby="party-roster-heading">
+        <h2 id="party-roster-heading">Party roster</h2>
+        <ul id="party-roster" class="party-roster" aria-live="polite">
+          <li>Load a replay to see each agent's board symbol and color badge.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="group-play-stats-heading">
+        <h2 id="group-play-stats-heading">Group play stats</h2>
+        <ul id="group-play-stats" class="group-play-stats" aria-live="polite">
+          <li>Load a replay to see group size, total score, action mix, and current room objects.</li>
+        </ul>
+      </section>
+
       <section id="local-live-room" class="local-live-room" aria-labelledby="local-live-room-heading">
         <h2 id="local-live-room-heading">Local live room</h2>
         <p>
@@ -122,6 +158,7 @@
           <button id="local-live-room-cleanup" type="button">Delete local live session</button>
         </div>
         <p class="local-live-room-boundary">Browser-smoke evidence stays local-only: it checks a local-only boundary, session id, safe client-side validation error copy, and no-session/cleared local-only copy. Delete clears only this in-memory localhost session; it does not delete accounts, stored data, public rooms, or replay fixtures.</p>
+        <p id="hosted-static-boundary" class="local-live-room-boundary">Hosted static page note: replay browsing works on GitHub Pages; Local live room controls require a localhost server and do not create public multiplayer on the hosted showcase.</p>
         <div class="local-live-room-actions" aria-label="Local live action JSON inputs">
           <label for="local-live-room-jiggly-action">Jiggly action JSON</label>
           <textarea id="local-live-room-jiggly-action" rows="3" aria-describedby="local-live-room-status local-live-room-jiggly-action-status">{"type":"say","message":"hello live room"}</textarea>
@@ -147,6 +184,10 @@
 
       <section aria-labelledby="turns-heading">
         <h2 id="turns-heading">Turns</h2>
+        <div class="replay-autoplay-controls" aria-label="Replay autoplay controls">
+          <button id="replay-autoplay-toggle" type="button">Play replay</button>
+          <p id="replay-autoplay-status" aria-live="polite">Autoplay is stopped.</p>
+        </div>
         <div id="turns" class="turns" aria-label="Replay turns"></div>
       </section>
 

@@ -48,6 +48,40 @@
       "path": "fixtures/scripted-quest-prompt-viewer-replay.json",
       "summary": "Jiggly posts an open quest card while Moltie leaves a note and places a lamp through the scripted replay authoring path.",
       "title": "Scripted quest prompt"
+    },
+    {
+      "id": "six-agent-medium-party",
+      "participants": [
+        "jiggly",
+        "moltie",
+        "crabby",
+        "puff",
+        "tidy",
+        "bubbles"
+      ],
+      "path": "fixtures/six-agent-medium-party-viewer-replay.json",
+      "summary": "A medium group of six agents coordinates a shared picnic quest with decorations, notes, chat, and lane movement.",
+      "title": "Six-agent medium party"
+    },
+    {
+      "id": "twelve-agent-large-swarm",
+      "title": "Twelve-agent large swarm",
+      "path": "fixtures/twelve-agent-large-swarm-viewer-replay.json",
+      "summary": "large swarm scoreboard fixture: twelve agents mix curated drop-ins, chill chat, playful building, and competitive gathering.",
+      "participants": [
+        "jiggly",
+        "moltie",
+        "crabby",
+        "puff",
+        "tidy",
+        "bubbles",
+        "spark",
+        "nibbles",
+        "glimmer",
+        "rook",
+        "pixel",
+        "echo"
+      ]
     }
   ],
   "format": "agent-playground.fixture-catalog.v1"
