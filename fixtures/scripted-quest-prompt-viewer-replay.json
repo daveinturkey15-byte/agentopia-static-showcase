@@ -1,0 +1,341 @@
+{
+  "format": "agent-playground.viewer-replay.v1",
+  "replay": {
+    "agent_ids": [
+      "jiggly",
+      "moltie"
+    ],
+    "height": 4,
+    "resource_count": 0,
+    "seed": 8,
+    "turns": [
+      {
+        "actions": {
+          "jiggly": {
+            "message": "quest board open",
+            "type": "say"
+          },
+          "moltie": {
+            "message": "ready to decorate",
+            "type": "say"
+          }
+        },
+        "events": [
+          {
+            "agent_id": "jiggly",
+            "message": "quest board open",
+            "type": "say"
+          },
+          {
+            "agent_id": "moltie",
+            "message": "ready to decorate",
+            "type": "say"
+          }
+        ],
+        "turn": 0
+      },
+      {
+        "actions": {
+          "jiggly": {
+            "description": "Place a lamp beside the welcome flower.",
+            "title": "Lantern nook",
+            "type": "create_quest"
+          },
+          "moltie": {
+            "message": "I'll bring the lamp",
+            "type": "leave_note"
+          }
+        },
+        "events": [
+          {
+            "agent_id": "jiggly",
+            "description": "Place a lamp beside the welcome flower.",
+            "quest_id": "turn-1-jiggly-quest",
+            "status": "open",
+            "title": "Lantern nook",
+            "type": "create_quest"
+          },
+          {
+            "agent_id": "moltie",
+            "message": "I'll bring the lamp",
+            "note_id": "turn-1-moltie-note",
+            "position": {
+              "x": 1,
+              "y": 0
+            },
+            "type": "leave_note"
+          }
+        ],
+        "turn": 1
+      },
+      {
+        "actions": {
+          "jiggly": {
+            "tile": "flower",
+            "type": "place_tile"
+          },
+          "moltie": {
+            "tile": "lamp",
+            "type": "place_tile"
+          }
+        },
+        "events": [
+          {
+            "agent_id": "jiggly",
+            "decoration_id": "turn-2-jiggly-flower",
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "tile": "flower",
+            "type": "place_tile"
+          },
+          {
+            "agent_id": "moltie",
+            "decoration_id": "turn-2-moltie-lamp",
+            "position": {
+              "x": 1,
+              "y": 0
+            },
+            "tile": "lamp",
+            "type": "place_tile"
+          }
+        ],
+        "turn": 2
+      }
+    ],
+    "width": 4
+  },
+  "snapshots": [
+    {
+      "observation": {
+        "agents": [
+          {
+            "agent_id": "jiggly",
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "moltie",
+            "position": {
+              "x": 1,
+              "y": 0
+            },
+            "score": 0
+          }
+        ],
+        "decorations": [],
+        "height": 4,
+        "notes": [],
+        "quests": [],
+        "resources": [],
+        "room": {
+          "description": "A tiny cozy room where agents can play, build, and relax.",
+          "mood": "cozy",
+          "name": "Jiggly Grove"
+        },
+        "self": {
+          "agent_id": "jiggly",
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "score": 0
+        },
+        "turn": 0,
+        "walls": [],
+        "width": 4
+      },
+      "turn": 0
+    },
+    {
+      "observation": {
+        "agents": [
+          {
+            "agent_id": "jiggly",
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "moltie",
+            "position": {
+              "x": 1,
+              "y": 0
+            },
+            "score": 0
+          }
+        ],
+        "decorations": [],
+        "height": 4,
+        "notes": [],
+        "quests": [],
+        "resources": [],
+        "room": {
+          "description": "A tiny cozy room where agents can play, build, and relax.",
+          "mood": "cozy",
+          "name": "Jiggly Grove"
+        },
+        "self": {
+          "agent_id": "jiggly",
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "score": 0
+        },
+        "turn": 1,
+        "walls": [],
+        "width": 4
+      },
+      "turn": 1
+    },
+    {
+      "observation": {
+        "agents": [
+          {
+            "agent_id": "jiggly",
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "moltie",
+            "position": {
+              "x": 1,
+              "y": 0
+            },
+            "score": 0
+          }
+        ],
+        "decorations": [],
+        "height": 4,
+        "notes": [
+          {
+            "author_id": "moltie",
+            "message": "I'll bring the lamp",
+            "note_id": "turn-1-moltie-note",
+            "position": {
+              "x": 1,
+              "y": 0
+            }
+          }
+        ],
+        "quests": [
+          {
+            "author_id": "jiggly",
+            "description": "Place a lamp beside the welcome flower.",
+            "quest_id": "turn-1-jiggly-quest",
+            "status": "open",
+            "title": "Lantern nook"
+          }
+        ],
+        "resources": [],
+        "room": {
+          "description": "A tiny cozy room where agents can play, build, and relax.",
+          "mood": "cozy",
+          "name": "Jiggly Grove"
+        },
+        "self": {
+          "agent_id": "jiggly",
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "score": 0
+        },
+        "turn": 2,
+        "walls": [],
+        "width": 4
+      },
+      "turn": 2
+    },
+    {
+      "observation": {
+        "agents": [
+          {
+            "agent_id": "jiggly",
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "moltie",
+            "position": {
+              "x": 1,
+              "y": 0
+            },
+            "score": 0
+          }
+        ],
+        "decorations": [
+          {
+            "decoration_id": "turn-2-jiggly-flower",
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "tile": "flower"
+          },
+          {
+            "decoration_id": "turn-2-moltie-lamp",
+            "position": {
+              "x": 1,
+              "y": 0
+            },
+            "tile": "lamp"
+          }
+        ],
+        "height": 4,
+        "notes": [
+          {
+            "author_id": "moltie",
+            "message": "I'll bring the lamp",
+            "note_id": "turn-1-moltie-note",
+            "position": {
+              "x": 1,
+              "y": 0
+            }
+          }
+        ],
+        "quests": [
+          {
+            "author_id": "jiggly",
+            "description": "Place a lamp beside the welcome flower.",
+            "quest_id": "turn-1-jiggly-quest",
+            "status": "open",
+            "title": "Lantern nook"
+          }
+        ],
+        "resources": [],
+        "room": {
+          "description": "A tiny cozy room where agents can play, build, and relax.",
+          "mood": "cozy",
+          "name": "Jiggly Grove"
+        },
+        "self": {
+          "agent_id": "jiggly",
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "score": 0
+        },
+        "turn": 3,
+        "walls": [],
+        "width": 4
+      },
+      "turn": 3
+    }
+  ],
+  "story_markdown": "# Agent Playground Story\n\nSeed: 8\n\n- Turn 0: jiggly said: quest board open\n- Turn 0: moltie said: ready to decorate\n- Turn 1: jiggly posted quest: Lantern nook \u2014 Place a lamp beside the welcome flower.\n- Turn 1: moltie left a note: I'll bring the lamp\n- Turn 2: jiggly placed flower at (0,0)\n- Turn 2: moltie placed lamp at (1,0)\n"
+}

@@ -1,0 +1,227 @@
+{
+  "format": "agent-playground.viewer-replay.v1",
+  "replay": {
+    "agent_ids": [
+      "jiggly",
+      "moltie"
+    ],
+    "height": 4,
+    "resource_count": 0,
+    "seed": 5,
+    "turns": [
+      {
+        "actions": {
+          "jiggly": {
+            "message": "hello molty",
+            "type": "say"
+          },
+          "moltie": {
+            "message": "hello jiggly",
+            "type": "say"
+          }
+        },
+        "events": [
+          {
+            "agent_id": "jiggly",
+            "message": "hello molty",
+            "type": "say"
+          },
+          {
+            "agent_id": "moltie",
+            "message": "hello jiggly",
+            "type": "say"
+          }
+        ],
+        "turn": 0
+      },
+      {
+        "actions": {
+          "jiggly": {
+            "tile": "flower",
+            "type": "place_tile"
+          },
+          "moltie": {
+            "tile": "lamp",
+            "type": "place_tile"
+          }
+        },
+        "events": [
+          {
+            "agent_id": "jiggly",
+            "decoration_id": "turn-1-jiggly-flower",
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "tile": "flower",
+            "type": "place_tile"
+          },
+          {
+            "agent_id": "moltie",
+            "decoration_id": "turn-1-moltie-lamp",
+            "position": {
+              "x": 1,
+              "y": 0
+            },
+            "tile": "lamp",
+            "type": "place_tile"
+          }
+        ],
+        "turn": 1
+      }
+    ],
+    "width": 4
+  },
+  "snapshots": [
+    {
+      "observation": {
+        "agents": [
+          {
+            "agent_id": "jiggly",
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "moltie",
+            "position": {
+              "x": 1,
+              "y": 0
+            },
+            "score": 0
+          }
+        ],
+        "decorations": [],
+        "height": 4,
+        "notes": [],
+        "quests": [],
+        "resources": [],
+        "room": {
+          "description": "A tiny cozy room where agents can play, build, and relax.",
+          "mood": "cozy",
+          "name": "Jiggly Grove"
+        },
+        "self": {
+          "agent_id": "jiggly",
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "score": 0
+        },
+        "turn": 0,
+        "walls": [],
+        "width": 4
+      },
+      "turn": 0
+    },
+    {
+      "observation": {
+        "agents": [
+          {
+            "agent_id": "jiggly",
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "moltie",
+            "position": {
+              "x": 1,
+              "y": 0
+            },
+            "score": 0
+          }
+        ],
+        "decorations": [],
+        "height": 4,
+        "notes": [],
+        "quests": [],
+        "resources": [],
+        "room": {
+          "description": "A tiny cozy room where agents can play, build, and relax.",
+          "mood": "cozy",
+          "name": "Jiggly Grove"
+        },
+        "self": {
+          "agent_id": "jiggly",
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "score": 0
+        },
+        "turn": 1,
+        "walls": [],
+        "width": 4
+      },
+      "turn": 1
+    },
+    {
+      "observation": {
+        "agents": [
+          {
+            "agent_id": "jiggly",
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "moltie",
+            "position": {
+              "x": 1,
+              "y": 0
+            },
+            "score": 0
+          }
+        ],
+        "decorations": [
+          {
+            "decoration_id": "turn-1-jiggly-flower",
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "tile": "flower"
+          },
+          {
+            "decoration_id": "turn-1-moltie-lamp",
+            "position": {
+              "x": 1,
+              "y": 0
+            },
+            "tile": "lamp"
+          }
+        ],
+        "height": 4,
+        "notes": [],
+        "quests": [],
+        "resources": [],
+        "room": {
+          "description": "A tiny cozy room where agents can play, build, and relax.",
+          "mood": "cozy",
+          "name": "Jiggly Grove"
+        },
+        "self": {
+          "agent_id": "jiggly",
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "score": 0
+        },
+        "turn": 2,
+        "walls": [],
+        "width": 4
+      },
+      "turn": 2
+    }
+  ],
+  "story_markdown": "# Agent Playground Story\n\nSeed: 5\n\n- Turn 0: jiggly said: hello molty\n- Turn 0: moltie said: hello jiggly\n- Turn 1: jiggly placed flower at (0,0)\n- Turn 1: moltie placed lamp at (1,0)\n"
+}

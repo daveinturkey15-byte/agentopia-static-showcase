@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="no-referrer" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'"
+    />
+    <title>Agent Playground Replay Viewer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Agent Playground Replay Viewer</h1>
+      <p>A tiny static replay viewer for AgentCraft / Agentopia cozy room experiments.</p>
+
+      <section aria-labelledby="fixture-heading">
+        <h2 id="fixture-heading">Replay fixture</h2>
+        <div class="catalog-filter">
+          <label for="catalog-filter">Filter replay fixtures</label>
+          <input
+            id="catalog-filter"
+            type="search"
+            placeholder="Filter by title, participant, summary, or path"
+            aria-describedby="catalog-filter-status"
+          />
+          <p id="catalog-filter-status" class="catalog-filter-status" aria-live="polite">Showing all replay fixtures.</p>
+        </div>
+        <div id="fixture-picker" class="fixture-picker" aria-label="Replay fixture choices"></div>
+        <p id="fixture-summary" class="fixture-summary">Loading local replay fixtures…</p>
+      </section>
+
+      <section aria-labelledby="fixture-details-heading">
+        <h2 id="fixture-details-heading">Fixture details</h2>
+        <ul id="fixture-details" class="fixture-details" aria-live="polite">
+          <li>Selected fixture details will appear here.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="replay-review-checklist-heading">
+        <h2 id="replay-review-checklist-heading">Replay review checklist</h2>
+        <ul id="replay-review-checklist" class="replay-review-checklist" aria-live="polite">
+          <li>Fixture provenance: confirm catalog title/path or local file name before trusting evidence.</li>
+          <li>Story and event evidence: inspect the story recap and event log for the intended chat, note, quest, decoration, movement, or collision beats.</li>
+          <li>Participant and final-state evidence: check participants, metadata, state summary, cell inspector, notes, and quest panels for the final observable state.</li>
+          <li>Local-only boundaries: this review does not upload files, edit replays in the browser, host a public demo, or add quest completion/rewards.</li>
+        </ul>
+      </section>
+
+      <section id="fixture-promotion-guide" class="fixture-promotion-guide" aria-labelledby="fixture-promotion-guide-heading">
+        <h2 id="fixture-promotion-guide-heading">Fixture promotion guide</h2>
+        <p id="fixture-promotion-status" aria-live="polite">Promotion status will appear after a replay loads.</p>
+        <ol>
+          <li>Keep generated replay outputs under ignored <code>runs/</code> until a small deterministic fixture is intentionally promoted.</li>
+          <li>Add canonical builder equality tests before committing fixture JSON.</li>
+          <li>Update catalog and docs before sharing the fixture as evidence.</li>
+          <li>Local-only: this guide does not upload, host, post, create accounts, or add live multiplayer.</li>
+        </ol>
+      </section>
+
+      <section id="replay-validation" class="replay-validation" aria-labelledby="replay-validation-heading">
+        <h2 id="replay-validation-heading">Replay validation</h2>
+        <ul id="replay-validation-results" class="replay-validation-results" aria-live="polite">
+          <li>Format string will be checked after a replay loads.</li>
+          <li>Snapshot count equals replay turns plus one will be checked after a replay loads.</li>
+          <li>Participant metadata exists will be checked after a replay loads.</li>
+          <li>Local-only: validation does not upload, host, post, create accounts, or add live multiplayer.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="evidence-filter-heading">
+        <h2 id="evidence-filter-heading">Filter selected replay evidence</h2>
+        <div class="evidence-filter">
+          <label for="evidence-filter">Evidence search</label>
+          <input
+            id="evidence-filter"
+            type="search"
+            placeholder="Search story and event log text"
+            aria-describedby="evidence-filter-status"
+          />
+          <p id="evidence-filter-status" class="evidence-filter-status" aria-live="polite">
+            Search story and event log text for the currently loaded replay.
+          </p>
+        </div>
+      </section>
+
+      <section id="local-replay-loader" class="local-replay-loader" aria-labelledby="local-replay-loader-heading">
+        <h2 id="local-replay-loader-heading">Load local replay JSON</h2>
+        <p>Select a local `agent-playground.viewer-replay.v1` JSON file exported to `runs/`. Nothing is uploaded.</p>
+        <label for="local-replay-file">Replay JSON file</label>
+        <input id="local-replay-file" type="file" accept="application/json,.json" />
+        <p id="local-replay-status" class="local-replay-status" aria-live="polite">No local replay selected.</p>
+      </section>
+
+      <section aria-labelledby="replay-metadata-heading">
+        <h2 id="replay-metadata-heading">Replay metadata</h2>
+        <ul id="replay-metadata" class="replay-metadata" aria-live="polite"></ul>
+      </section>
+
+      <section aria-labelledby="state-summary-heading">
+        <h2 id="state-summary-heading">State summary</h2>
+        <ul id="state-summary" class="state-summary" aria-live="polite"></ul>
+      </section>
+
+      <section aria-labelledby="participants-heading">
+        <h2 id="participants-heading">Participants</h2>
+        <ul id="participants" class="participants" aria-live="polite"></ul>
+      </section>
+
+      <section id="local-live-room" class="local-live-room" aria-labelledby="local-live-room-heading">
+        <h2 id="local-live-room-heading">Local live room</h2>
+        <p>
+          In-memory localhost prototype controls for the first Agentopia multiplayer bridge.
+          Sessions are local-only and are not saved, uploaded, hosted publicly, or bound beyond localhost.
+        </p>
+        <div class="local-live-room-controls" aria-label="Local live room controls">
+          <button id="local-live-room-create" type="button">Create local live session</button>
+          <button id="local-live-room-refresh" type="button">Refresh live room</button>
+          <button id="local-live-room-submit" type="button">Submit live actions</button>
+          <button id="local-live-room-cleanup" type="button">Delete local live session</button>
+        </div>
+        <p class="local-live-room-boundary">Browser-smoke evidence stays local-only: it checks a local-only boundary, session id, safe client-side validation error copy, and no-session/cleared local-only copy. Delete clears only this in-memory localhost session; it does not delete accounts, stored data, public rooms, or replay fixtures.</p>
+        <div class="local-live-room-actions" aria-label="Local live action JSON inputs">
+          <label for="local-live-room-jiggly-action">Jiggly action JSON</label>
+          <textarea id="local-live-room-jiggly-action" rows="3" aria-describedby="local-live-room-status local-live-room-jiggly-action-status">{"type":"say","message":"hello live room"}</textarea>
+          <p id="local-live-room-jiggly-action-status" class="local-live-room-action-status" aria-live="polite">Action validation hints appear here before submit.</p>
+          <label for="local-live-room-moltie-action">Moltie action JSON</label>
+          <textarea id="local-live-room-moltie-action" rows="3" aria-describedby="local-live-room-status local-live-room-moltie-action-status">{"type":"wait"}</textarea>
+          <p id="local-live-room-moltie-action-status" class="local-live-room-action-status" aria-live="polite">Action validation hints appear here before submit.</p>
+        </div>
+        <p id="local-live-room-status" class="local-live-room-status" aria-live="polite">
+          No local live session created yet. This panel is an in-memory localhost prototype shell.
+        </p>
+        <ul id="local-live-room-participants" class="local-live-room-participants" aria-live="polite">
+          <li>Create a local live session to load participant positions and scores.</li>
+        </ul>
+        <ol id="local-live-room-events" class="local-live-room-events" aria-live="polite">
+          <li>Create a local live session to load localhost API event evidence.</li>
+        </ol>
+        <h3>Live action examples</h3>
+        <ul id="local-live-room-examples" class="local-live-room-examples" aria-live="polite">
+          <li>Create a local live session to load backend-provided legal action examples.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="turns-heading">
+        <h2 id="turns-heading">Turns</h2>
+        <div id="turns" class="turns" aria-label="Replay turns"></div>
+      </section>
+
+      <section aria-labelledby="turn-actions-heading">
+        <h2 id="turn-actions-heading">Turn actions</h2>
+        <ul id="turn-actions" class="turn-actions" aria-live="polite"></ul>
+      </section>
+
+      <section id="action-preview" class="action-preview" aria-labelledby="action-preview-heading">
+        <h2 id="action-preview-heading">Action preview</h2>
+        <p>Example legal JSON actions for agents inspecting the selected replay state.</p>
+        <ul id="action-preview-examples" class="action-preview-examples" aria-live="polite">
+          <li><code>{"type":"wait"}</code> — legal no-op action.</li>
+          <li><code>{"type":"say","message":"hello grove"}</code> — cozy chat example.</li>
+          <li>Preview only: actions shown here are not submitted, saved, uploaded, or sent to a live multiplayer server.</li>
+        </ul>
+      </section>
+
+      <section id="action-sandbox" class="action-sandbox" aria-labelledby="action-sandbox-heading">
+        <h2 id="action-sandbox-heading">Action sandbox</h2>
+        <p>Try one local JSON action against the selected replay state for preview feedback.</p>
+        <label for="action-sandbox-input">Action JSON</label>
+        <textarea id="action-sandbox-input" class="action-sandbox-input" rows="4" aria-describedby="action-sandbox-status">{"type":"wait"}</textarea>
+        <p id="action-sandbox-status" class="action-sandbox-status" aria-live="polite">Preview only: this does not submit, save, upload, mutate state, or contact a live multiplayer server.</p>
+        <ul id="action-sandbox-result" class="action-sandbox-result" aria-live="polite">
+          <li>Action sandbox behavior will be wired in a later task.</li>
+        </ul>
+      </section>
+
+      <section id="action-result-preview" class="action-result-preview" aria-labelledby="action-result-preview-heading">
+        <h2 id="action-result-preview-heading">Action result preview</h2>
+        <p>Hypothetical next-state diff for the sandbox action against the selected replay snapshot.</p>
+        <p id="action-result-preview-status" class="action-result-preview-status" aria-live="polite">Preview only: this does not submit, save, upload, or mutate replay state.</p>
+        <ul id="action-result-preview-lines" class="action-result-preview-lines" aria-live="polite">
+          <li>Action result preview behavior will be wired in a later task.</li>
+        </ul>
+      </section>
+
+      <section id="action-rehearsal" class="action-rehearsal" aria-labelledby="action-rehearsal-heading">
+        <h2 id="action-rehearsal-heading">Action rehearsal</h2>
+        <p>Hypothetical after-state summary for one sandbox action against an in-memory copy of the selected replay snapshot.</p>
+        <p id="action-rehearsal-status" class="action-rehearsal-status" aria-live="polite">Preview only: this does not submit, save, upload, or mutate replay state.</p>
+        <ul id="action-rehearsal-summary" class="action-rehearsal-summary" aria-live="polite">
+          <li>Action rehearsal behavior will be wired in a later task.</li>
+        </ul>
+      </section>
+
+      <section id="local-action-runner" class="local-action-runner" aria-labelledby="local-action-runner-heading">
+        <h2 id="local-action-runner-heading">Local action runner</h2>
+        <p>Hypothetical one-action fork for the selected replay snapshot and sandbox action.</p>
+        <button id="local-action-runner-button" type="button">Run selected sandbox action locally</button>
+        <p id="local-action-runner-status" class="local-action-runner-status" aria-live="polite">This does not save, upload, mutate replay state, or contact a live multiplayer server.</p>
+        <ul id="local-action-runner-summary" class="local-action-runner-summary" aria-live="polite">
+          <li>Local action runner behavior will be wired in a later task.</li>
+        </ul>
+      </section>
+
+      <section id="local-session-transcript" class="local-session-transcript" aria-labelledby="local-session-transcript-heading">
+        <h2 id="local-session-transcript-heading">Local session transcript</h2>
+        <p>Ephemeral preview history for this browser session's local-only action checks.</p>
+        <p id="local-session-transcript-status" class="local-session-transcript-status" aria-live="polite">This does not save, upload, mutate replay state, or contact a live multiplayer server.</p>
+        <div class="local-session-transcript-actions">
+          <button id="local-session-transcript-clear" type="button" aria-describedby="local-session-transcript-status">Clear transcript</button>
+          <span>Clears only this in-memory transcript view; no replay files or fixture state are changed.</span>
+        </div>
+        <div class="local-session-transcript-filter">
+          <label for="local-session-transcript-filter">Filter local session transcript</label>
+          <input
+            id="local-session-transcript-filter"
+            type="search"
+            placeholder="Search action, source, turn, or outcome"
+            aria-describedby="local-session-transcript-filter-status"
+          />
+          <p id="local-session-transcript-filter-status" class="local-session-transcript-filter-status" aria-live="polite">
+            Search only this browser-memory transcript view; this does not save, upload, mutate replay state, use browser storage, or contact a live multiplayer server.
+          </p>
+        </div>
+        <ol id="local-session-transcript-entries" class="local-session-transcript-entries" aria-live="polite">
+          <li>Transcript behavior will be wired in a later task.</li>
+        </ol>
+      </section>
+
+      <section id="local-session-summary" class="local-session-summary" aria-labelledby="local-session-summary-heading">
+        <h2 id="local-session-summary-heading">Local session summary</h2>
+        <p>Browser-memory-only summary for this page's Local action runner attempts.</p>
+        <p id="local-session-summary-status" class="local-session-summary-status" aria-live="polite">No local action attempts summarized yet.</p>
+        <ul id="local-session-summary-lines" class="local-session-summary-lines" aria-live="polite">
+          <li>This does not save, upload, mutate replay state, use browser storage, or contact a live multiplayer server.</li>
+        </ul>
+      </section>
+
+      <section id="local-session-review-checklist" class="local-session-review-checklist" aria-labelledby="local-session-review-checklist-heading">
+        <h2 id="local-session-review-checklist-heading">Local session review checklist</h2>
+        <p>Browser-memory-only checklist for reviewing Local action runner attempts before treating local previews as evidence.</p>
+        <p id="local-session-review-checklist-status" class="local-session-review-checklist-status" aria-live="polite">Review before treating local previews as evidence: no local action attempts yet.</p>
+        <ul id="local-session-review-checklist-items" class="local-session-review-checklist-items" aria-live="polite">
+          <li>Confirm at least one valid local preview and one error/edge-case preview when relevant.</li>
+          <li>Check the selected fixture/source and turn labels before citing the evidence.</li>
+          <li>This does not save, upload, mutate replay state, use browser storage, or contact a live multiplayer server.</li>
+        </ul>
+      </section>
+
+      <section id="local-session-evidence-citation" class="local-session-evidence-citation" aria-labelledby="local-session-evidence-citation-heading">
+        <h2 id="local-session-evidence-citation-heading">Local session evidence citation</h2>
+        <p>Browser-memory-only citation helper for summarizing Local action runner attempts in notes or worklogs.</p>
+        <p id="local-session-evidence-citation-status" class="local-session-evidence-citation-status" aria-live="polite">Quote local preview evidence carefully: no local action attempts yet.</p>
+        <ul id="local-session-evidence-citation-lines" class="local-session-evidence-citation-lines" aria-live="polite">
+          <li>Run local preview attempts before citing fixture/source/turn/action evidence.</li>
+          <li>This does not save, upload, copy to clipboard, mutate replay state, use browser storage, or contact a live multiplayer server.</li>
+        </ul>
+      </section>
+
+      <section id="local-session-attempt-comparison" class="local-session-attempt-comparison" aria-labelledby="local-session-attempt-comparison-heading">
+        <h2 id="local-session-attempt-comparison-heading">Local session attempt comparison</h2>
+        <p>Browser-memory-only comparison for contrasting recent Local action runner attempts before choosing what evidence to cite or what action to rehearse next.</p>
+        <p id="local-session-attempt-comparison-status" class="local-session-attempt-comparison-status" aria-live="polite">Compare recent local preview attempts: no local action attempts yet.</p>
+        <ul id="local-session-attempt-comparison-lines" class="local-session-attempt-comparison-lines" aria-live="polite">
+          <li>Run at least two local preview attempts to compare source, turn, action, and valid/error outcomes.</li>
+          <li>This does not save, upload, copy to clipboard, mutate replay state, use browser storage, or contact a live multiplayer server.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="grid-heading">
+        <h2 id="grid-heading">Room</h2>
+        <div id="grid" class="grid" aria-live="polite"></div>
+      </section>
+
+      <section aria-labelledby="cell-inspector-heading">
+        <h2 id="cell-inspector-heading">Cell inspector</h2>
+        <ul id="cell-inspector" class="cell-inspector" aria-live="polite"></ul>
+      </section>
+
+      <section aria-labelledby="notes-heading">
+        <h2 id="notes-heading">Room notes</h2>
+        <ul id="notes" class="notes" aria-live="polite"></ul>
+      </section>
+
+      <section aria-labelledby="quests-heading">
+        <h2 id="quests-heading">Quest cards</h2>
+        <ul id="quests" class="quests" aria-live="polite"></ul>
+      </section>
+
+      <section aria-labelledby="events-heading">
+        <h2 id="events-heading">Event log</h2>
+        <ol id="event-log"></ol>
+      </section>
+
+      <section aria-labelledby="story-heading">
+        <h2 id="story-heading">Story</h2>
+        <pre id="story"></pre>
+      </section>
+    </main>
+
+    <script src="viewer.js"></script>
+  </body>
+</html>

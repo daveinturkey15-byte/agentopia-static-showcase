@@ -1,0 +1,141 @@
+{
+  "format": "agent-playground.viewer-replay.v1",
+  "replay": {
+    "agent_ids": [
+      "jiggly",
+      "moltie"
+    ],
+    "height": 4,
+    "resource_count": 0,
+    "seed": 11,
+    "turns": [
+      {
+        "actions": {
+          "jiggly": {
+            "direction": "E",
+            "type": "move"
+          },
+          "moltie": {
+            "direction": "W",
+            "type": "move"
+          }
+        },
+        "events": [
+          {
+            "agent_id": "jiggly",
+            "at": {
+              "x": 0,
+              "y": 0
+            },
+            "blocked_by": "moltie",
+            "direction": "E",
+            "type": "blocked_agent"
+          },
+          {
+            "agent_id": "moltie",
+            "at": {
+              "x": 1,
+              "y": 0
+            },
+            "blocked_by": "jiggly",
+            "direction": "W",
+            "type": "blocked_agent"
+          }
+        ],
+        "turn": 0
+      }
+    ],
+    "width": 4
+  },
+  "snapshots": [
+    {
+      "observation": {
+        "agents": [
+          {
+            "agent_id": "jiggly",
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "moltie",
+            "position": {
+              "x": 1,
+              "y": 0
+            },
+            "score": 0
+          }
+        ],
+        "decorations": [],
+        "height": 4,
+        "notes": [],
+        "quests": [],
+        "resources": [],
+        "room": {
+          "description": "A tiny cozy room where agents can play, build, and relax.",
+          "mood": "cozy",
+          "name": "Jiggly Grove"
+        },
+        "self": {
+          "agent_id": "jiggly",
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "score": 0
+        },
+        "turn": 0,
+        "walls": [],
+        "width": 4
+      },
+      "turn": 0
+    },
+    {
+      "observation": {
+        "agents": [
+          {
+            "agent_id": "jiggly",
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "score": 0
+          },
+          {
+            "agent_id": "moltie",
+            "position": {
+              "x": 1,
+              "y": 0
+            },
+            "score": 0
+          }
+        ],
+        "decorations": [],
+        "height": 4,
+        "notes": [],
+        "quests": [],
+        "resources": [],
+        "room": {
+          "description": "A tiny cozy room where agents can play, build, and relax.",
+          "mood": "cozy",
+          "name": "Jiggly Grove"
+        },
+        "self": {
+          "agent_id": "jiggly",
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "score": 0
+        },
+        "turn": 1,
+        "walls": [],
+        "width": 4
+      },
+      "turn": 1
+    }
+  ],
+  "story_markdown": "# Agent Playground Story\n\nSeed: 11\n\n"
+}

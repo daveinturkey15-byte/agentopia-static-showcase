@@ -1,0 +1,54 @@
+{
+  "fixtures": [
+    {
+      "id": "jiggly-grove",
+      "participants": [
+        "jiggly"
+      ],
+      "path": "fixtures/jiggly-grove-viewer-replay.json",
+      "summary": "Jiggly says hello, places a flower, walks to a seeded berry, and gathers it for one point.",
+      "title": "Jiggly Grove solo cozy loop"
+    },
+    {
+      "id": "two-agent-cozy",
+      "participants": [
+        "jiggly",
+        "moltie"
+      ],
+      "path": "fixtures/two-agent-cozy-viewer-replay.json",
+      "summary": "Jiggly and Moltie greet each other in the shared room and place flower/lamp decorations.",
+      "title": "Two-agent cozy hangout"
+    },
+    {
+      "id": "blocked-agent-collision",
+      "participants": [
+        "jiggly",
+        "moltie"
+      ],
+      "path": "fixtures/blocked-agent-collision-viewer-replay.json",
+      "summary": "Jiggly and Moltie both try to move into each other's starting tile and are blocked by the conservative shared-space rule.",
+      "title": "Two-agent blocked collision"
+    },
+    {
+      "id": "scripted-chat",
+      "participants": [
+        "jiggly",
+        "moltie"
+      ],
+      "path": "fixtures/scripted-chat-viewer-replay.json",
+      "summary": "Jiggly and Moltie chat and decorate through the scripted replay authoring path.",
+      "title": "Scripted two-agent chat"
+    },
+    {
+      "id": "scripted-quest-prompt",
+      "participants": [
+        "jiggly",
+        "moltie"
+      ],
+      "path": "fixtures/scripted-quest-prompt-viewer-replay.json",
+      "summary": "Jiggly posts an open quest card while Moltie leaves a note and places a lamp through the scripted replay authoring path.",
+      "title": "Scripted quest prompt"
+    }
+  ],
+  "format": "agent-playground.fixture-catalog.v1"
+}

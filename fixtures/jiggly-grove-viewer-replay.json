@@ -1,0 +1,834 @@
+{
+  "format": "agent-playground.viewer-replay.v1",
+  "replay": {
+    "agent_ids": [
+      "jiggly"
+    ],
+    "height": 4,
+    "resource_count": 1,
+    "seed": 2,
+    "turns": [
+      {
+        "actions": {
+          "jiggly": {
+            "message": "hello grove",
+            "type": "say"
+          }
+        },
+        "events": [
+          {
+            "agent_id": "jiggly",
+            "message": "hello grove",
+            "type": "say"
+          }
+        ],
+        "turn": 0
+      },
+      {
+        "actions": {
+          "jiggly": {
+            "message": "welcome home",
+            "type": "leave_note"
+          }
+        },
+        "events": [
+          {
+            "agent_id": "jiggly",
+            "message": "welcome home",
+            "note_id": "turn-1-jiggly-note",
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "type": "leave_note"
+          }
+        ],
+        "turn": 1
+      },
+      {
+        "actions": {
+          "jiggly": {
+            "description": "Read the welcome note and place a flower.",
+            "title": "Welcome tour",
+            "type": "create_quest"
+          }
+        },
+        "events": [
+          {
+            "agent_id": "jiggly",
+            "description": "Read the welcome note and place a flower.",
+            "quest_id": "turn-2-jiggly-quest",
+            "status": "open",
+            "title": "Welcome tour",
+            "type": "create_quest"
+          }
+        ],
+        "turn": 2
+      },
+      {
+        "actions": {
+          "jiggly": {
+            "tile": "flower",
+            "type": "place_tile"
+          }
+        },
+        "events": [
+          {
+            "agent_id": "jiggly",
+            "decoration_id": "turn-3-jiggly-flower",
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "tile": "flower",
+            "type": "place_tile"
+          }
+        ],
+        "turn": 3
+      },
+      {
+        "actions": {
+          "jiggly": {
+            "direction": "E",
+            "type": "move"
+          }
+        },
+        "events": [
+          {
+            "agent_id": "jiggly",
+            "from": {
+              "x": 0,
+              "y": 0
+            },
+            "to": {
+              "x": 1,
+              "y": 0
+            },
+            "type": "move"
+          }
+        ],
+        "turn": 4
+      },
+      {
+        "actions": {
+          "jiggly": {
+            "direction": "E",
+            "type": "move"
+          }
+        },
+        "events": [
+          {
+            "agent_id": "jiggly",
+            "from": {
+              "x": 1,
+              "y": 0
+            },
+            "to": {
+              "x": 2,
+              "y": 0
+            },
+            "type": "move"
+          }
+        ],
+        "turn": 5
+      },
+      {
+        "actions": {
+          "jiggly": {
+            "direction": "S",
+            "type": "move"
+          }
+        },
+        "events": [
+          {
+            "agent_id": "jiggly",
+            "from": {
+              "x": 2,
+              "y": 0
+            },
+            "to": {
+              "x": 2,
+              "y": 1
+            },
+            "type": "move"
+          }
+        ],
+        "turn": 6
+      },
+      {
+        "actions": {
+          "jiggly": {
+            "direction": "S",
+            "type": "move"
+          }
+        },
+        "events": [
+          {
+            "agent_id": "jiggly",
+            "from": {
+              "x": 2,
+              "y": 1
+            },
+            "to": {
+              "x": 2,
+              "y": 2
+            },
+            "type": "move"
+          }
+        ],
+        "turn": 7
+      },
+      {
+        "actions": {
+          "jiggly": {
+            "type": "gather"
+          }
+        },
+        "events": [
+          {
+            "agent_id": "jiggly",
+            "resource_id": "berry-1",
+            "type": "gather",
+            "value": 1
+          }
+        ],
+        "turn": 8
+      }
+    ],
+    "width": 4
+  },
+  "snapshots": [
+    {
+      "observation": {
+        "agents": [
+          {
+            "agent_id": "jiggly",
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "score": 0
+          }
+        ],
+        "decorations": [],
+        "height": 4,
+        "notes": [],
+        "quests": [],
+        "resources": [
+          {
+            "position": {
+              "x": 2,
+              "y": 2
+            },
+            "resource_id": "berry-1",
+            "value": 1
+          }
+        ],
+        "room": {
+          "description": "A tiny cozy room where agents can play, build, and relax.",
+          "mood": "cozy",
+          "name": "Jiggly Grove"
+        },
+        "self": {
+          "agent_id": "jiggly",
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "score": 0
+        },
+        "turn": 0,
+        "walls": [],
+        "width": 4
+      },
+      "turn": 0
+    },
+    {
+      "observation": {
+        "agents": [
+          {
+            "agent_id": "jiggly",
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "score": 0
+          }
+        ],
+        "decorations": [],
+        "height": 4,
+        "notes": [],
+        "quests": [],
+        "resources": [
+          {
+            "position": {
+              "x": 2,
+              "y": 2
+            },
+            "resource_id": "berry-1",
+            "value": 1
+          }
+        ],
+        "room": {
+          "description": "A tiny cozy room where agents can play, build, and relax.",
+          "mood": "cozy",
+          "name": "Jiggly Grove"
+        },
+        "self": {
+          "agent_id": "jiggly",
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "score": 0
+        },
+        "turn": 1,
+        "walls": [],
+        "width": 4
+      },
+      "turn": 1
+    },
+    {
+      "observation": {
+        "agents": [
+          {
+            "agent_id": "jiggly",
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "score": 0
+          }
+        ],
+        "decorations": [],
+        "height": 4,
+        "notes": [
+          {
+            "author_id": "jiggly",
+            "message": "welcome home",
+            "note_id": "turn-1-jiggly-note",
+            "position": {
+              "x": 0,
+              "y": 0
+            }
+          }
+        ],
+        "quests": [],
+        "resources": [
+          {
+            "position": {
+              "x": 2,
+              "y": 2
+            },
+            "resource_id": "berry-1",
+            "value": 1
+          }
+        ],
+        "room": {
+          "description": "A tiny cozy room where agents can play, build, and relax.",
+          "mood": "cozy",
+          "name": "Jiggly Grove"
+        },
+        "self": {
+          "agent_id": "jiggly",
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "score": 0
+        },
+        "turn": 2,
+        "walls": [],
+        "width": 4
+      },
+      "turn": 2
+    },
+    {
+      "observation": {
+        "agents": [
+          {
+            "agent_id": "jiggly",
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "score": 0
+          }
+        ],
+        "decorations": [],
+        "height": 4,
+        "notes": [
+          {
+            "author_id": "jiggly",
+            "message": "welcome home",
+            "note_id": "turn-1-jiggly-note",
+            "position": {
+              "x": 0,
+              "y": 0
+            }
+          }
+        ],
+        "quests": [
+          {
+            "author_id": "jiggly",
+            "description": "Read the welcome note and place a flower.",
+            "quest_id": "turn-2-jiggly-quest",
+            "status": "open",
+            "title": "Welcome tour"
+          }
+        ],
+        "resources": [
+          {
+            "position": {
+              "x": 2,
+              "y": 2
+            },
+            "resource_id": "berry-1",
+            "value": 1
+          }
+        ],
+        "room": {
+          "description": "A tiny cozy room where agents can play, build, and relax.",
+          "mood": "cozy",
+          "name": "Jiggly Grove"
+        },
+        "self": {
+          "agent_id": "jiggly",
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "score": 0
+        },
+        "turn": 3,
+        "walls": [],
+        "width": 4
+      },
+      "turn": 3
+    },
+    {
+      "observation": {
+        "agents": [
+          {
+            "agent_id": "jiggly",
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "score": 0
+          }
+        ],
+        "decorations": [
+          {
+            "decoration_id": "turn-3-jiggly-flower",
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "tile": "flower"
+          }
+        ],
+        "height": 4,
+        "notes": [
+          {
+            "author_id": "jiggly",
+            "message": "welcome home",
+            "note_id": "turn-1-jiggly-note",
+            "position": {
+              "x": 0,
+              "y": 0
+            }
+          }
+        ],
+        "quests": [
+          {
+            "author_id": "jiggly",
+            "description": "Read the welcome note and place a flower.",
+            "quest_id": "turn-2-jiggly-quest",
+            "status": "open",
+            "title": "Welcome tour"
+          }
+        ],
+        "resources": [
+          {
+            "position": {
+              "x": 2,
+              "y": 2
+            },
+            "resource_id": "berry-1",
+            "value": 1
+          }
+        ],
+        "room": {
+          "description": "A tiny cozy room where agents can play, build, and relax.",
+          "mood": "cozy",
+          "name": "Jiggly Grove"
+        },
+        "self": {
+          "agent_id": "jiggly",
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "score": 0
+        },
+        "turn": 4,
+        "walls": [],
+        "width": 4
+      },
+      "turn": 4
+    },
+    {
+      "observation": {
+        "agents": [
+          {
+            "agent_id": "jiggly",
+            "position": {
+              "x": 1,
+              "y": 0
+            },
+            "score": 0
+          }
+        ],
+        "decorations": [
+          {
+            "decoration_id": "turn-3-jiggly-flower",
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "tile": "flower"
+          }
+        ],
+        "height": 4,
+        "notes": [
+          {
+            "author_id": "jiggly",
+            "message": "welcome home",
+            "note_id": "turn-1-jiggly-note",
+            "position": {
+              "x": 0,
+              "y": 0
+            }
+          }
+        ],
+        "quests": [
+          {
+            "author_id": "jiggly",
+            "description": "Read the welcome note and place a flower.",
+            "quest_id": "turn-2-jiggly-quest",
+            "status": "open",
+            "title": "Welcome tour"
+          }
+        ],
+        "resources": [
+          {
+            "position": {
+              "x": 2,
+              "y": 2
+            },
+            "resource_id": "berry-1",
+            "value": 1
+          }
+        ],
+        "room": {
+          "description": "A tiny cozy room where agents can play, build, and relax.",
+          "mood": "cozy",
+          "name": "Jiggly Grove"
+        },
+        "self": {
+          "agent_id": "jiggly",
+          "position": {
+            "x": 1,
+            "y": 0
+          },
+          "score": 0
+        },
+        "turn": 5,
+        "walls": [],
+        "width": 4
+      },
+      "turn": 5
+    },
+    {
+      "observation": {
+        "agents": [
+          {
+            "agent_id": "jiggly",
+            "position": {
+              "x": 2,
+              "y": 0
+            },
+            "score": 0
+          }
+        ],
+        "decorations": [
+          {
+            "decoration_id": "turn-3-jiggly-flower",
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "tile": "flower"
+          }
+        ],
+        "height": 4,
+        "notes": [
+          {
+            "author_id": "jiggly",
+            "message": "welcome home",
+            "note_id": "turn-1-jiggly-note",
+            "position": {
+              "x": 0,
+              "y": 0
+            }
+          }
+        ],
+        "quests": [
+          {
+            "author_id": "jiggly",
+            "description": "Read the welcome note and place a flower.",
+            "quest_id": "turn-2-jiggly-quest",
+            "status": "open",
+            "title": "Welcome tour"
+          }
+        ],
+        "resources": [
+          {
+            "position": {
+              "x": 2,
+              "y": 2
+            },
+            "resource_id": "berry-1",
+            "value": 1
+          }
+        ],
+        "room": {
+          "description": "A tiny cozy room where agents can play, build, and relax.",
+          "mood": "cozy",
+          "name": "Jiggly Grove"
+        },
+        "self": {
+          "agent_id": "jiggly",
+          "position": {
+            "x": 2,
+            "y": 0
+          },
+          "score": 0
+        },
+        "turn": 6,
+        "walls": [],
+        "width": 4
+      },
+      "turn": 6
+    },
+    {
+      "observation": {
+        "agents": [
+          {
+            "agent_id": "jiggly",
+            "position": {
+              "x": 2,
+              "y": 1
+            },
+            "score": 0
+          }
+        ],
+        "decorations": [
+          {
+            "decoration_id": "turn-3-jiggly-flower",
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "tile": "flower"
+          }
+        ],
+        "height": 4,
+        "notes": [
+          {
+            "author_id": "jiggly",
+            "message": "welcome home",
+            "note_id": "turn-1-jiggly-note",
+            "position": {
+              "x": 0,
+              "y": 0
+            }
+          }
+        ],
+        "quests": [
+          {
+            "author_id": "jiggly",
+            "description": "Read the welcome note and place a flower.",
+            "quest_id": "turn-2-jiggly-quest",
+            "status": "open",
+            "title": "Welcome tour"
+          }
+        ],
+        "resources": [
+          {
+            "position": {
+              "x": 2,
+              "y": 2
+            },
+            "resource_id": "berry-1",
+            "value": 1
+          }
+        ],
+        "room": {
+          "description": "A tiny cozy room where agents can play, build, and relax.",
+          "mood": "cozy",
+          "name": "Jiggly Grove"
+        },
+        "self": {
+          "agent_id": "jiggly",
+          "position": {
+            "x": 2,
+            "y": 1
+          },
+          "score": 0
+        },
+        "turn": 7,
+        "walls": [],
+        "width": 4
+      },
+      "turn": 7
+    },
+    {
+      "observation": {
+        "agents": [
+          {
+            "agent_id": "jiggly",
+            "position": {
+              "x": 2,
+              "y": 2
+            },
+            "score": 0
+          }
+        ],
+        "decorations": [
+          {
+            "decoration_id": "turn-3-jiggly-flower",
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "tile": "flower"
+          }
+        ],
+        "height": 4,
+        "notes": [
+          {
+            "author_id": "jiggly",
+            "message": "welcome home",
+            "note_id": "turn-1-jiggly-note",
+            "position": {
+              "x": 0,
+              "y": 0
+            }
+          }
+        ],
+        "quests": [
+          {
+            "author_id": "jiggly",
+            "description": "Read the welcome note and place a flower.",
+            "quest_id": "turn-2-jiggly-quest",
+            "status": "open",
+            "title": "Welcome tour"
+          }
+        ],
+        "resources": [
+          {
+            "position": {
+              "x": 2,
+              "y": 2
+            },
+            "resource_id": "berry-1",
+            "value": 1
+          }
+        ],
+        "room": {
+          "description": "A tiny cozy room where agents can play, build, and relax.",
+          "mood": "cozy",
+          "name": "Jiggly Grove"
+        },
+        "self": {
+          "agent_id": "jiggly",
+          "position": {
+            "x": 2,
+            "y": 2
+          },
+          "score": 0
+        },
+        "turn": 8,
+        "walls": [],
+        "width": 4
+      },
+      "turn": 8
+    },
+    {
+      "observation": {
+        "agents": [
+          {
+            "agent_id": "jiggly",
+            "position": {
+              "x": 2,
+              "y": 2
+            },
+            "score": 1
+          }
+        ],
+        "decorations": [
+          {
+            "decoration_id": "turn-3-jiggly-flower",
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "tile": "flower"
+          }
+        ],
+        "height": 4,
+        "notes": [
+          {
+            "author_id": "jiggly",
+            "message": "welcome home",
+            "note_id": "turn-1-jiggly-note",
+            "position": {
+              "x": 0,
+              "y": 0
+            }
+          }
+        ],
+        "quests": [
+          {
+            "author_id": "jiggly",
+            "description": "Read the welcome note and place a flower.",
+            "quest_id": "turn-2-jiggly-quest",
+            "status": "open",
+            "title": "Welcome tour"
+          }
+        ],
+        "resources": [],
+        "room": {
+          "description": "A tiny cozy room where agents can play, build, and relax.",
+          "mood": "cozy",
+          "name": "Jiggly Grove"
+        },
+        "self": {
+          "agent_id": "jiggly",
+          "position": {
+            "x": 2,
+            "y": 2
+          },
+          "score": 1
+        },
+        "turn": 9,
+        "walls": [],
+        "width": 4
+      },
+      "turn": 9
+    }
+  ],
+  "story_markdown": "# Agent Playground Story\n\nSeed: 2\n\n- Turn 0: jiggly said: hello grove\n- Turn 1: jiggly left a note: welcome home\n- Turn 2: jiggly posted quest: Welcome tour \u2014 Read the welcome note and place a flower.\n- Turn 3: jiggly placed flower at (0,0)\n"
+}
